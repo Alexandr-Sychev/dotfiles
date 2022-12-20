@@ -28,3 +28,7 @@ vim.keymap.set("n", "<C-l>", '<C-w>l')
 vim.keymap.set("n", "<leader>e", ':NvimTreeToggle\n')
 -- show current file in files tree
 vim.keymap.set("n", "<leader>E", ':NvimTreeFindFile\n')
+
+-- packer
+vim.keymap.set("n", "<leader>ps", ':PackerStatus\n')
+vim.keymap.set("n", "<leader>pS", ':PackerSync\n')
