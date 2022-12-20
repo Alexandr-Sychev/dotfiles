@@ -56,4 +56,9 @@ return require('packer').startup(function(use)
         config = function() require('nvim_comment').setup() end
     }
 
+    use({
+        "aserowy/tmux.nvim",
+        config = function() require("tmux").setup() end
+    })
+
 end)
