@@ -12,10 +12,11 @@ vim.keymap.set("n", "<leader>g", telescopeBuiltin.live_grep, {})
 -- grep by word under cursor
 vim.keymap.set("n", "<leader>gw", telescopeBuiltin.grep_string, {})
 
--- rename 
+-- rename
 vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, {})
 -- comment
 vim.keymap.set("n", "<leader>/", ':CommentToggle\n')
+vim.keymap.set("v", "<leader>/", ':CommentToggle\n')
 
 -- change buffer
 vim.keymap.set("n", "<C-h>", '<C-w>h')
