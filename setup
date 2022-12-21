@@ -1,0 +1,9 @@
+#!/usr/bin/bash
+
+DOTFILES = "$HOME/.dotfiles"
+
+if ! [ -x "$(command -v ansible)" ]; then
+  sudo pacman -S ansible --noconfirm
+fi
+
+ansible-playbook -i ./hosts ./main.yml --ask-become-pass
