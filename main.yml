@@ -1,4 +1,5 @@
 - name: Set up local workstation
   hosts: local
   roles:
-    # - role: rofi
+    - role: tmux
+    - role: nvim

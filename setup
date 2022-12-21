@@ -1,9 +1,13 @@
 #!/usr/bin/bash
 
-DOTFILES = "$HOME/.dotfiles"
+DOTFILES="$HOME/.dotfiles"
+HOSTS="$DOTFILES/hosts"
+PLAYBOOK="$DOTFILES/main.yml"
+
+export DOTFILES
 
 if ! [ -x "$(command -v ansible)" ]; then
   sudo pacman -S ansible --noconfirm
 fi
 
-ansible-playbook -i ./hosts ./main.yml --ask-become-pass
+ansible-playbook -i $HOSTS $PLAYBOOK --ask-become-pass

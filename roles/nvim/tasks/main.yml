@@ -1,0 +1,18 @@
+- name: Install nvim
+  become: yes
+  package:
+    name: neovim
+    state: present
+
+- name: Install packer
+  git:
+    repo: https://github.com/wbthomason/packer.nvim
+    dest: "{{ lookup('env', 'HOME') }}/.local/share/nvim/site/pack/packer/start/packer.nvim"
+    depth: 1
+
+- name: Link config
+  file:
+    src: "{{ lookup('env', 'DOTFILES') }}/roles/nvim/files"
+    dest: "{{ lookup('env', 'HOME') }}/.config/nvim"
+    state: link
+    force: yes
