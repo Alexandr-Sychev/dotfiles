@@ -2,7 +2,7 @@ vim.g.mapleader = " "
 
 local telescopeBuiltin = require("telescope.builtin");
 
--- search
+-- search and navigation
 -- all not ignored files
 vim.keymap.set("n", "<leader>ff", telescopeBuiltin.find_files, {})
 -- recent files
@@ -11,6 +11,8 @@ vim.keymap.set("n", "<leader>fr", telescopeBuiltin.oldfiles, {})
 vim.keymap.set("n", "<leader>g", telescopeBuiltin.live_grep, {})
 -- grep by word under cursor
 vim.keymap.set("n", "<leader>gw", telescopeBuiltin.grep_string, {})
+-- open last closed file
+vim.keymap.set("n", "<leader><leader>", ':e#\n')
 
 -- rename
 vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, {})
