@@ -1,0 +1,6 @@
+- name: Install lf
+  become: yes
+  package:
+    name: lf
+    state: present
+
