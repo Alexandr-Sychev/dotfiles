@@ -1,0 +1,9 @@
+- name: Install soft
+  become: yes
+  package:
+    name:
+      - curl
+      - fzf
+      - zoxide
+    state: present
+
