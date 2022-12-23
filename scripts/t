@@ -1,15 +1,12 @@
 #!/usr/bin/bash
 
-ZOXIDE_RESULT=$(zoxide query -l | fzf --reverse)
+FOLDER=$(pwd)
+FOLDER=$(basename $FOLDER)
 
-if [ -z $ZOXIDE_RESULT ]; then
-    exit 0
-fi
-
-FOLDER=$(basename $ZOXIDE_RESULT)
 SESSION=$(tmux list-sessions | grep $FOLDER | awk '{print $1}')
 SESSION=${SESSION//:/}
-cd $ZOXIDE_RESULT
+
+zoxide add $FOLDER
 
 # if session does not exists
 if [ -z $SESSION ]; then
