@@ -1,9 +1,14 @@
 - name: Set up local workstation
   hosts: local
   roles:
-    - tmux
-    - nvim
-    - kitty
-    - lf
-    - zsh
+    - role: tmux
+      tags: tmux
+    - role: nvim
+      tags: nvim
+    - role: kitty
+      tags: kitty
+    - role: lf
+      tags: lf
+    - role: zsh
+      tags: zsh
 

@@ -10,4 +10,11 @@ if ! [ -x "$(command -v ansible)" ]; then
   sudo pacman -S ansible --noconfirm
 fi
 
-ansible-playbook -i $HOSTS $PLAYBOOK --ask-become-pass
+TAGS=$(printf ", %s" "$@")
+
+if [[ -z $1 ]]; then
+    ansible-playbook -i $HOSTS $PLAYBOOK --ask-become-pass 
+else
+    ansible-playbook -i $HOSTS $PLAYBOOK --ask-become-pass --tags "$TAGS" 
+fi
+
