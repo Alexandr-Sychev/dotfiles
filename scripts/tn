@@ -11,22 +11,15 @@ SESSION=$(tmux list-sessions | grep $FOLDER | awk '{print $1}')
 SESSION=${SESSION//:/}
 cd $ZOXIDE_RESULT
 
+# if session does not exists
+if [ -z $SESSION ]; then
+    tmux new-session -d -s $FOLDER
+fi 
+
 # if outside of tmux
 if [ -z $TMUX ]; then
-
-    # if session does not exists
-    if [ -z $SESSION ]; then
-        tmux new-session -s $FOLDER
-    else 
-        tmux attach -t $SESSION
-    fi
+    tmux attach -t $SESSION
 # else inside of tmux
 else
-
-    # if session does not exists
-    if [ -z $SESSION ]; then
-        tmux new-session -d -s $FOLDER
-    fi 
-
     tmux switch-client -t $SESSION
 fi
