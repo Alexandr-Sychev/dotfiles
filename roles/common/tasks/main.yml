@@ -7,7 +7,3 @@
       - zoxide
     state: present
 
-- name: Set alt+shift to change keyboard layout
-  shell:
-    setxkbmap "us,ru" -option grp:alt_shift_toggle
-
