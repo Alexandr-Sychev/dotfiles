@@ -4,6 +4,12 @@
     name: awesome
     state: present
 
+- name: Install rofi
+  become: yes
+  package:
+    name: rofi
+    state: present
+
 - name: Link config
   file:
     src: "{{ lookup('env', 'DOTFILES') }}/roles/awesomewm/files"
