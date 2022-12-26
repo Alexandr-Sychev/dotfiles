@@ -1,0 +1,12 @@
+- name: Install awesome
+  become: yes
+  package:
+    name: awesome
+    state: present
+
+- name: Link config
+  file:
+    src: "{{ lookup('env', 'DOTFILES') }}/roles/awesomewm/files"
+    dest: "{{ lookup('env', 'HOME') }}/.config/awesome"
+    state: link
+    force: yes
