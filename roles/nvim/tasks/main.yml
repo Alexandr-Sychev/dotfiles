@@ -4,6 +4,12 @@
     name: neovim
     state: present
 
+- name: Install lazygit
+  become: yes
+  package:
+    name: lazygit
+    state: present
+
 - name: Install packer
   git:
     repo: https://github.com/wbthomason/packer.nvim

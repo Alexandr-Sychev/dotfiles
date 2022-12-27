@@ -61,4 +61,6 @@ return require('packer').startup(function(use)
         config = function() require("tmux").setup() end
     })
 
+    use 'voldikss/vim-floaterm'
+
 end)

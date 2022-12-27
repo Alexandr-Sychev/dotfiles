@@ -39,3 +39,11 @@ vim.keymap.set("n", "<leader>pS", ':PackerSync\n')
 -- show signature
 vim.keymap.set("n", "<leader>s", vim.lsp.buf.signature_help, bufopts)
 vim.keymap.set("n", "<leader>a", vim.lsp.buf.code_action, bufopts)
+
+-- floaterm
+-- open terminal
+vim.keymap.set("n", "<leader>t", ':FloatermNew --width=0.8 --height=0.7 --title=terminal<CR>')
+-- open lazygit
+vim.keymap.set("n", "<leader>G", ':FloatermNew --width=0.9 --height=0.95 --title=lazygit lazygit <CR>')
+-- open lazydocker
+vim.keymap.set("n", "<leader>td", ':FloatermNew --width=0.9 --height=0.95 --title=lazydocker lazydocker<CR>')
