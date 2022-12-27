@@ -17,6 +17,14 @@ return require('packer').startup(function(use)
         end
     })
 
+    use({
+        'arcticicestudio/nord-vim',
+        as = 'nord-vim',
+        config = function()
+            vim.cmd('colorscheme nord')
+        end
+    })
+
     -- use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
 
     use {
