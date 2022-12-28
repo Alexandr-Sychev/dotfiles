@@ -5,8 +5,8 @@
       - curl
       - fzf
       - zoxide
-      # - nitrogen
-      # - composer
+      - nitrogen
+      - composer
       - entr
       - obsidian
     state: present
