@@ -13,6 +13,10 @@ require("nvim-tree").setup({
             list = {
                 { key = "l", action = "edit" },
                 { key = "h", action = "close_node" },
+                { key = "c", action = "copy_name" },
+                { key = "C", action = "copy_path" },
+                { key = "ac", action = "copy_absolute_path" },
+                { key = "y", action = "copy" },
             },
         },
     },
