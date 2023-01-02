@@ -8,14 +8,14 @@
 - name: Create chromium extensions directory
   become: yes
   file:
-    path: /usr/share/chromium-browser/extensions
+    path: /usr/share/chromium/extensions
     state: directory
 
 - name: Create chromium JSON files to install extensions 
   become: yes
   template:
     src: extension.json
-    dest: "/usr/share/chromium-browser/extensions/{{ item }}.json"
+    dest: "/usr/share/chromium/extensions/{{ item }}.json"
   with_items:
     - cimiefiiaegbelhefglklhhakcgmhkai
     - dbepggeogbaibhgnhhndojpepiihcmeb
