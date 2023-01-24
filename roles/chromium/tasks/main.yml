@@ -3,7 +3,6 @@
   package:
     name: chromium
     state: present
-
       
 - name: Create chromium extensions directory
   become: yes
