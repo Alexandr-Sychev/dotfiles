@@ -47,3 +47,7 @@ vim.keymap.set("n", "<leader>t", ':FloatermNew --width=0.9 --height=0.95 --title
 vim.keymap.set("n", "<leader>G", ':FloatermNew --width=0.9 --height=0.95 --title=lazygit lazygit <CR>')
 -- open lazydocker
 vim.keymap.set("n", "<leader>td", ':FloatermNew --width=0.9 --height=0.95 --title=lazydocker lazydocker<CR>')
+
+-- mind
+-- open main
+vim.keymap.set("n", "<leader>m", ':MindOpenMain<CR>')
