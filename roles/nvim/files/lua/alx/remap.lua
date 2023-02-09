@@ -20,11 +20,17 @@ vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, {})
 vim.keymap.set("n", "<leader>/", ':CommentToggle\n')
 vim.keymap.set("v", "<leader>/", ':CommentToggle\n')
 
--- buffers navigation
+-- splits navigation
 vim.keymap.set("n", "<C-h>", '<C-w>h')
 vim.keymap.set("n", "<C-j>", '<C-w>j')
 vim.keymap.set("n", "<C-k>", '<C-w>k')
 vim.keymap.set("n", "<C-l>", '<C-w>l')
+
+-- splits resizing
+vim.keymap.set("n", "<C-A-l>", '<C-w>10>')
+vim.keymap.set("n", "<C-A-h>", '<C-w>10<')
+vim.keymap.set("n", "<C-A-j>", '<C-w>5+')
+vim.keymap.set("n", "<C-A-k>", '<C-w>5-')
 
 -- toggle files tree
 vim.keymap.set("n", "<leader>e", ':NvimTreeToggle\n')
@@ -47,7 +53,3 @@ vim.keymap.set("n", "<leader>t", ':FloatermNew --width=0.9 --height=0.95 --title
 vim.keymap.set("n", "<leader>G", ':FloatermNew --width=0.9 --height=0.95 --title=lazygit lazygit <CR>')
 -- open lazydocker
 vim.keymap.set("n", "<leader>td", ':FloatermNew --width=0.9 --height=0.95 --title=lazydocker lazydocker<CR>')
-
--- mind
--- open main
-vim.keymap.set("n", "<leader>m", ':MindOpenMain<CR>')
