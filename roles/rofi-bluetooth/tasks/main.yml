@@ -1,0 +1,15 @@
+- name: Install rofi and bluez utils
+  become: yes
+  package:
+    name: 
+      - rofi
+      - bluez-utils
+    state: present
+
+- name: Install rofi-bluetooth
+  become: yes
+  git:
+    repo: https://github.com/nickclyde/rofi-bluetooth.git
+    dest: /bin/rofi-bluetooth
+    depth: 1
+
