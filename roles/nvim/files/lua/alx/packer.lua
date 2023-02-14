@@ -71,4 +71,6 @@ return require('packer').startup(function(use)
 
     use 'voldikss/vim-floaterm'
 
+    use 'dhruvasagar/vim-table-mode'
+
 end)
