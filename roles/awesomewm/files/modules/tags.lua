@@ -13,7 +13,8 @@ function add_tags(tags)
         end
 
         awful.tag.add(tag.name, {
-            screen = screen_number
+            screen = screen_number,
+            layout = awful.layout.layouts[1],
         })
     end
 end
