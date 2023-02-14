@@ -126,10 +126,6 @@ awful.screen.connect_for_each_screen(function(s)
     -- Wallpaper
     set_wallpaper(s)
 
-    -- Each screen has its own tag table.
-    awful.tag({ "1: Other", "2: Music", "3: Telegram", "4: Other", "5: Browser", "6: Terminal" }, s,
-        awful.layout.layouts[1])
-
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
     -- Create an imagebox widget which will contain an icon indicating which layout we're using.
@@ -178,6 +174,7 @@ awful.screen.connect_for_each_screen(function(s)
 end)
 -- }}}
 
+require("modules.tags")
 require("modules.client_keys")
 require("modules.client_buttons")
 
