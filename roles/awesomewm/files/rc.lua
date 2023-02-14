@@ -524,8 +524,8 @@ client.connect_signal("mouse::enter", function(c)
     c:emit_signal("request::activate", "mouse_enter", { raise = false })
 end)
 
-awful.spawn.with_shell(
-    'setxkbmap "us,ru" -option grp:alt_shift_toggle'
-)
+require("modules.autostart")
+
+require("modules.after_startup")
 
 -- }}}
