@@ -163,8 +163,21 @@ for i = 1, 9 do
                     end
                 end
             end,
-            { description = "toggle focused client on tag #" .. i, group = "tag" })
+            { description = "toggle focused client on tag #" .. i, group = "tag" }),
+
+        awful.key({}, "XF86AudioRaiseVolume", function()
+            awful.util.spawn("amixer -D pulse sset Master 5%+", false)
+        end),
+
+        awful.key({}, "XF86AudioLowerVolume", function()
+            awful.util.spawn("amixer -D pulse sset Master 5%-", false)
+        end),
+
+        awful.key({}, "XF86AudioMute", function()
+            awful.util.spawn("amixer -D pulse sset Master toggle", false)
+        end)
     )
+
 end
 
 -- Set keys
