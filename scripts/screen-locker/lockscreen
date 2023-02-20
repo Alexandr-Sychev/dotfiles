@@ -28,10 +28,11 @@
 #     -fill "#282828" -colorize 10% \
 #     ${lines[*]} "$image"
 #
+
 # i3lock \
 #     --color=282828 \
 #     --image="$image" \
-#     --image="~/Pictures/wallpapers/ozero_les_gory_140548_1920x1080.jpg" \
+#     --image="/home/alx/Pictures/wallpapers/ozero_les_gory_140548_1920x1080.jpg" \
 #     --inside-color=282828FF \
 #     --insidever-color=282828FF \
 #     --insidewrong-color=282828FF \
@@ -80,5 +81,5 @@
 
 i3lock \
     --clock 
-    --color=121212    
+    --ignore-empty-password \
 
