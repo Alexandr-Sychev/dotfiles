@@ -80,6 +80,11 @@
 #     --clock
 
 i3lock \
-    --clock 
-    --ignore-empty-password \
+    --clock \
+    --color=000000 \
+    --time-color=FFFFFF \
+    --time-str='%H:%M' \
+    --date-str='%d.%m.%y, %A' \
+    --date-color=FFFFFF \
+    --ignore-empty-password
 
