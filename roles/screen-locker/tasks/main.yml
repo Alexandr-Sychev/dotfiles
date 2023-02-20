@@ -1,0 +1,10 @@
+- name: Install maim
+  become: yes
+  package:
+    name: maim
+    state: present
+
+- name: Install i3lock-color
+  become: yes
+  shell:
+    pamac install --no-confirm i3lock-color
