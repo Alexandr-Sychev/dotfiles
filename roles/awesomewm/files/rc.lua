@@ -41,10 +41,11 @@ require("modules.layouts")
 -- {{{ Menu
 -- Create a launcher widget and a main menu
 myawesomemenu = {
+    { "restart", awesome.restart },
     { "hotkeys", function() hotkeys_popup.show_help(nil, awful.screen.focused()) end },
     { "manual", terminal .. " -e man awesome" },
     { "edit config", editor_cmd .. " " .. awesome.conffile },
-    { "restart", awesome.restart },
+    -- { "edit config", editor_cmd .. " " .. (os.getenv("DOTFILES") or "~/.dotfiles/") },
     { "quit", function() awesome.quit() end },
 }
 
