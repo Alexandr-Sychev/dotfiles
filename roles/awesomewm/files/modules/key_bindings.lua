@@ -26,7 +26,11 @@ globalkeys = gears.table.join(
     awful.key({ modkey, "Shift" }, "w", function() awful.spawn.with_shell("chromium") end,
         { description = "open browser", group = "launcher" }),
     awful.key({ modkey, }, "b", function() awful.spawn.with_shell("/bin/rofi-bluetooth/rofi-bluetooth") end,
-        { description = "open bluetooth manager", group = "client" }),
+        { description = "open bluetooth manager", group = "awesome" }),
+
+    awful.key({ modkey, }, "p",
+        function() awful.spawn.with_shell("~/.dotfiles/scripts/de/open-power-management-menu.py") end,
+        { description = "open power manager", group = "awesome" }),
 
     awful.key({ modkey, }, "j",
         function()
