@@ -35,6 +35,9 @@ return require('packer').startup(function(use)
     use 'hrsh7th/cmp-nvim-lsp'
     use 'saadparwaiz1/cmp_luasnip'
 
+    -- Snippets
+    use 'L3MON4D3/LuaSnip'
+
     use {
         'VonHeikemen/lsp-zero.nvim',
         requires = {
@@ -42,10 +45,6 @@ return require('packer').startup(function(use)
             { 'neovim/nvim-lspconfig' },
             { 'williamboman/mason.nvim' },
             { 'williamboman/mason-lspconfig.nvim' },
-
-            -- Snippets
-            -- { 'L3MON4D3/LuaSnip' },
-            -- { 'rafamadriz/friendly-snippets' },
         }
     }
 
