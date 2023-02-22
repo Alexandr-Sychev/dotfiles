@@ -12,6 +12,14 @@ root.buttons(gears.table.join(
 
 -- {{{ Key bindings
 globalkeys = gears.table.join(
+    awful.key({ modkey, }, "u",
+        function() awful.screen.focus(1) end,
+        { description = "open secondary screen", group = "screen" }),
+
+    awful.key({ modkey, }, "i",
+        function() awful.screen.focus(2) end,
+        { description = "open main screen", group = "screen" }),
+
     awful.key({ modkey, 'Shift' }, "h", hotkeys_popup.show_help,
         { description = "show help", group = "awesome" }),
     awful.key({ modkey, }, "Left", awful.tag.viewprev,
@@ -54,8 +62,8 @@ globalkeys = gears.table.join(
         { description = "swap with previous client by index", group = "client" }),
     awful.key({ modkey, }, "o", function() awful.screen.focus_relative(1) end,
         { description = "focus the next screen", group = "screen" }),
-    awful.key({ modkey, }, "u", awful.client.urgent.jumpto,
-        { description = "jump to urgent client", group = "client" }),
+    -- awful.key({ modkey, }, "u", awful.client.urgent.jumpto,
+    --     { description = "jump to urgent client", group = "client" }),
     awful.key({ modkey, }, "Tab",
         function()
             awful.client.focus.history.previous()
@@ -186,6 +194,7 @@ for i = 1, 9 do
         awful.key({}, "XF86AudioMute", function()
             awful.util.spawn("amixer -D pulse sset Master toggle", false)
         end)
+
     )
 
 end
