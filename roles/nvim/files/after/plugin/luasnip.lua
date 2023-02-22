@@ -1,6 +1,10 @@
 local ls = require("luasnip")
-local types = require("luasnip.util.types")
 
+require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/snippets/" })
+
+vim.cmd([[command! LuaSnipEdit :lua require("luasnip.loaders.from_lua").edit_snippet_files()]])
+
+local types = require("luasnip.util.types")
 
 ls.config.set_config {
     -- This tells LuaSnip to remember to keep around the last snippet.
@@ -27,32 +31,61 @@ ls.config.set_config {
 
 
 
-
--- <c-k> is my expansion key
--- this will expand the current item or jump to the next item within the snippet.
-vim.keymap.set({ "i", "s" }, "<c-k>", function()
+local jump_forward = function()
     if ls.expand_or_jumpable() then
         ls.expand_or_jump()
     end
-end, { silent = true })
+end
 
--- <c-j> is my jump backwards key.
--- this always moves to the previous item within the snippet
-vim.keymap.set({ "i", "s" }, "<c-j>", function()
+local jump_backward = function()
     if ls.jumpable(-1) then
         ls.jump(-1)
     end
-end, { silent = true })
+end
 
--- <c-l> is selecting within a list of options.
--- This is useful for choice nodes (introduced in the forthcoming episode 2)
-vim.keymap.set("i", "<c-l>", function()
+local next_choice = function()
     if ls.choice_active() then
         ls.change_choice(1)
     end
-end)
+end
 
-vim.keymap.set("i", "<c-u>", require "luasnip.extras.select_choice")
+local prev_choice = function()
+    if ls.choice_active() then
+        ls.change_choice(-1)
+    end
+end
+
+vim.keymap.set({ "i", "s" }, "<a-l>", jump_forward)
+vim.keymap.set({ "i", "s" }, "<a-h>", jump_backward)
+
+vim.keymap.set({ "i", "s" }, "<a-j>", next_choice)
+vim.keymap.set({ "i", "s" }, "<a-k>", prev_choice)
+
+-- local edit_snippet_files = function()
+-- get current file type
+-- get path to snippets file for current file type
+-- open file
+-- end
+
+
+-- vim.keymap.set("i", "<c-s-u>", require "luasnip.extras.select_choice")
 
 -- shorcut to source my luasnips file again, which will reload my snippets
-vim.keymap.set("n", "<leader><leader>s", "<cmd>source ~/.config/nvim/after/plugin/luasnip.lua<CR>")
+-- vim.keymap.set("n", "<leader>S", "<cmd>source ~/.config/nvim/after/plugin/luasnip.lua<CR>")
+--
+--
+--
+
+
+local createSnippet = function(trigger, snippet, auto)
+    local snippet = s(trigger, snippet)
+    local snippets_list
+
+    if auto == nil or auto == false then
+        snippets_list = snippets
+    else
+        snippets_list = autosnippets
+    end
+
+    table.insert(snippets_list, snippet)
+end
