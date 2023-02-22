@@ -5,7 +5,7 @@ import rofi
 prompt = 'Power management'
 
 variants = {
-    'Lock': '$DOTFILES/scripts/screen-locker/lockscreen',
+    'Lock': '~/.dotfiles/scripts/screen-locker/lockscreen',
     'Sleep': 'systemctl suspend',
     'Power off': 'poweroff',
     'Restart': 'reboot',
