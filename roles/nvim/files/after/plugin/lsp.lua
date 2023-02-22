@@ -5,7 +5,7 @@ vim.opt.signcolumn = 'no'
 lsp.preset("recommended")
 
 lsp.ensure_installed({
-    'sumneko_lua',
+    'lua_ls',
     'phpactor',
 })
 
