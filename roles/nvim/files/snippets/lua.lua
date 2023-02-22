@@ -49,8 +49,24 @@ local first_capture = function(_, snip)
     return snip.captures[1]
 end
 
+local inlineFunc = s("if", fmt([[
+    function({}) {} end
+]], {
+    i(1, ""),
+    i(2, "--[[ TODO --]]"),
+}))
+
+local anonymousFunc = s("f", fmt([[
+    function({})
+        {}
+    end
+]], {
+    i(1, ""),
+    i(2, "-- TODO"),
+}))
+
 local lf = s({
-    trig = "lf (\\w*)",
+    trig = "lf ([%w_]+)",
     regTrig = true,
 }, fmt([[
     local {} = function({})
@@ -59,15 +75,18 @@ local lf = s({
 
 
 ]], {
-    f(first_capture),
-    c(1, { t(""), i(1, "args") }),
-    i(2, "-- TODO: implement"),
+    d(1, function(_, snip)
+        return sn(1, i(1, snip.captures[1]))
+    end),
+    i(2, ""),
+    i(3, "-- TODO: implement"),
 }))
 
+table.insert(snippets, inlineFunc)
+table.insert(snippets, anonymousFunc)
 table.insert(snippets, lf)
 
 -- End
-
 
 
 
