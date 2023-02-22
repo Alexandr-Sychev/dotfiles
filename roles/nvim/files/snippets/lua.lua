@@ -16,20 +16,6 @@ local snippets, autosnippets = {}, {}
 local group = vim.api.nvim_create_augroup("Lua Snippets", { clear = true })
 local file_pattern = "*.lua"
 
-local createSnippet = function(trigger, snippet, auto)
-    local snippet = s(trigger, snippet)
-    local snippets_list
-
-    if auto == nil or auto == false then
-        snippets_list = snippets
-    else
-        snippets_list = autosnippets
-    end
-
-    table.insert(snippets_list, snippet)
-end
-
-
 
 -- Start
 
