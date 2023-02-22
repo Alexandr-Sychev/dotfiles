@@ -1,3 +1,6 @@
+-- https://www.youtube.com/watch?v=ub0REXjhpmk
+
+
 local ls = require("luasnip")
 
 require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/snippets/" })

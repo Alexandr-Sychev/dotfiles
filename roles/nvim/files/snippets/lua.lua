@@ -33,21 +33,44 @@ end
 
 -- Start
 
-local lf = fmt([[
+-- local lf = fmt([[
+--     local {} = function({})
+--         {}
+--     end
+--
+--
+-- ]], {
+--     i(1, "func"),
+--     c(2, { t(""), i(1, "args") }),
+--     i(3, "-- TODO: implement"),
+-- })
+
+local first_capture = function(_, snip)
+    return snip.captures[1]
+end
+
+local lf = s({
+    trig = "lf (\\w*)",
+    regTrig = true,
+}, fmt([[
     local {} = function({})
         {}
     end
 
 
 ]], {
-    i(1, "func"),
-    c(2, { t(""), i(1, "args") }),
-    i(3, "-- TODO: implement"),
-})
+    f(first_capture),
+    c(1, { t(""), i(1, "args") }),
+    i(2, "-- TODO: implement"),
+}))
 
-createSnippet("lf", lf)
+table.insert(snippets, lf)
 
 -- End
+
+
+
+
 
 
 return snippets, autosnippets
