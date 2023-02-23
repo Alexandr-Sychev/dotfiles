@@ -13,7 +13,7 @@ local rep = require("luasnip.extras").rep
 
 local snippets, autosnippets = {}, {}
 
-local group = vim.api.nvim_create_augroup("Lua Snippets", { clear = true })
+local group = vim.api.nvim_create_augroup("PHP Snippets", { clear = true })
 local file_pattern = "*.php"
 
 
@@ -21,12 +21,11 @@ local file_pattern = "*.php"
 
 -- WE NEED
 --
--- class - cls <name>
+-- class - cls <name> <?extends> <?...implements>
 -- method - fn <name>
 --
 -- anonymous function - fn
 -- arrow function - afn
--- inline arrow function - ifn
 --
 -- if else
 -- while
@@ -37,7 +36,27 @@ local file_pattern = "*.php"
 -- getters - get <...fields>
 -- setters - set <...fields>
 
+local anonymous_function = s("fn", fmt([[
+function({}) {{
+    {}
+}}
+]], {
+    i(1, ""),
+    i(2, "// TODO"),
+}))
+
+local arrow_function = s("afn", fmt([[
+fn({}) => {}
+]], {
+    i(1, ""),
+    i(2, "/* TODO */"),
+}))
+
+table.insert(snippets, anonymous_function)
+table.insert(snippets, arrow_function)
+
 -- End
+
 
 
 return snippets, autosnippets
