@@ -32,6 +32,8 @@ vim.keymap.set("n", "<leader><leader>", ':e#\n')
 
 
 -- git
+-- g open lazygit
+vim.keymap.set("n", "<leader>G", ':FloatermNew --width=0.9 --height=0.95 --title=lazygit lazygit <CR>')
 -- gs - git status
 vim.keymap.set("n", "<leader>gs", ':Telescope git_status <CR>')
 -- gc - git commit
@@ -98,11 +100,6 @@ vim.keymap.set("v", "<leader>/", ':CommentToggle\n')
 -- code actions
 vim.keymap.set("n", "<leader>a", vim.lsp.buf.code_action, bufopts)
 -- vim.keymap.set("n", "<leader>a", ':Telescope coc code_actions <CR>')
-
-
--- floaterm
--- open lazygit
-vim.keymap.set("n", "<leader>G", ':FloatermNew --width=0.9 --height=0.95 --title=lazygit lazygit <CR>')
 
 
 -- telescope
