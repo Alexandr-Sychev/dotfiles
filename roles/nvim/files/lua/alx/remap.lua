@@ -60,8 +60,6 @@ vim.keymap.set("v", "<leader>/", ':CommentToggle\n')
 
 
 -- code
--- show signature
-vim.keymap.set("n", "<leader>s", vim.lsp.buf.signature_help, bufopts)
 -- code actions
 vim.keymap.set("n", "<leader>a", vim.lsp.buf.code_action, bufopts)
 
