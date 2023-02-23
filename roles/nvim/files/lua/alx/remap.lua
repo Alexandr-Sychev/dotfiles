@@ -65,9 +65,11 @@ vim.keymap.set("n", "<leader>a", vim.lsp.buf.code_action, bufopts)
 
 
 -- floaterm
--- open terminal
-vim.keymap.set("n", "<leader>t", ':FloatermNew --width=0.4 --wintype=vsplit --title=terminal zsh <CR>')
 -- open lazygit
 vim.keymap.set("n", "<leader>G", ':FloatermNew --width=0.9 --height=0.95 --title=lazygit lazygit <CR>')
--- open lazydocker
-vim.keymap.set("n", "<leader>td", ':FloatermNew --width=0.9 --height=0.95 --title=lazydocker lazydocker<CR>')
+
+
+-- telescope
+vim.keymap.set("n", "<leader>t", ':Telescope <CR>')
+-- vim.keymap.set("n", "<leader>tc", ':Telescope colorscheme<CR>')
+-- vim.keymap.set("n", "<leader>th", ':Telescope help_tags<CR>')
