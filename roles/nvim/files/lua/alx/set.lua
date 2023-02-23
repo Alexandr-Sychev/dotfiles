@@ -12,5 +12,7 @@ vim.opt.colorcolumn = "80"
 
 vim.opt.hlsearch = false
 
+vim.opt.signcolumn = 'no'
+
 -- format on save
 vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]]

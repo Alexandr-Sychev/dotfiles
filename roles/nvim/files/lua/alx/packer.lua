@@ -4,27 +4,13 @@ return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
+    -- Telescope
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.0',
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
 
-    use({
-        'rose-pine/neovim',
-        as = 'rose-pine',
-        config = function()
-            vim.cmd('colorscheme rose-pine')
-        end
-    })
-
-    use({
-        'arcticicestudio/nord-vim',
-        as = 'nord-vim',
-        config = function()
-            vim.cmd('colorscheme nord')
-        end
-    })
-
+    -- Treesitter
     -- use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
 
     -- Completion
@@ -38,6 +24,7 @@ return require('packer').startup(function(use)
     -- Snippets
     use 'L3MON4D3/LuaSnip'
 
+    -- LSP
     use {
         'VonHeikemen/lsp-zero.nvim',
         requires = {
@@ -48,28 +35,40 @@ return require('packer').startup(function(use)
         }
     }
 
+    -- Autopairs
     use {
         "windwp/nvim-autopairs",
         config = function() require("nvim-autopairs").setup {} end
     }
 
+    -- Nvim-tree
     use {
         'nvim-tree/nvim-tree.lua',
         tag = 'nightly' -- optional, updated every week. (see issue #1193)
     }
 
+    -- Comments
     use {
         "terrortylor/nvim-comment",
         config = function() require('nvim_comment').setup() end
     }
 
+    -- Tmux integration
     use({
         "aserowy/tmux.nvim",
         config = function() require("tmux").setup() end
     })
 
+    -- Floaterm
     use 'voldikss/vim-floaterm'
 
+    -- Table mode
     use 'dhruvasagar/vim-table-mode'
+
+    -- Colorschemes
+    use 'savq/melange-nvim'
+    use 'rose-pine/neovim'
+    use 'arcticicestudio/nord-vim'
+    use 'dracula/vim'
 
 end)
