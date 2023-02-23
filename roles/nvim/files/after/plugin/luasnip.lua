@@ -33,7 +33,6 @@ ls.config.set_config {
 }
 
 
-
 local jump_forward = function()
     if ls.expand_or_jumpable() then
         ls.expand_or_jump()
@@ -58,23 +57,9 @@ local prev_choice = function()
     end
 end
 
+
+-- snippets keybindings
 vim.keymap.set({ "i", "s" }, "<a-l>", jump_forward)
 vim.keymap.set({ "i", "s" }, "<a-h>", jump_backward)
-
 vim.keymap.set({ "i", "s" }, "<a-j>", next_choice)
 vim.keymap.set({ "i", "s" }, "<a-k>", prev_choice)
-
--- local edit_snippet_files = function()
--- get current file type
--- get path to snippets file for current file type
--- open file
--- end
-
-
--- vim.keymap.set("i", "<c-s-u>", require "luasnip.extras.select_choice")
-
--- shorcut to source my luasnips file again, which will reload my snippets
--- vim.keymap.set("n", "<leader>S", "<cmd>source ~/.config/nvim/after/plugin/luasnip.lua<CR>")
---
---
---

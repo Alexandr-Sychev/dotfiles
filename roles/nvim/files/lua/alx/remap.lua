@@ -1,7 +1,7 @@
-vim.g.mapleader = " "
-
-
 local telescopeBuiltin = require("telescope.builtin");
+
+
+vim.g.mapleader = " "
 
 
 -- packer
