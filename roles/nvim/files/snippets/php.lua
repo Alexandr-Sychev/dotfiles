@@ -21,8 +21,13 @@ local file_pattern = "*.php"
 
 -- WE NEED
 --
--- class - cls <name> <?extends> <?...implements>
+-- start - <?
+--
+-- class - cls <name> <?extends> ?i <?...implements>
+--
 -- method - fn <name>
+-- empty constuctor - conse
+-- full constructor - consf
 --
 -- anonymous function - fn
 -- arrow function - afn
@@ -36,7 +41,63 @@ local file_pattern = "*.php"
 -- getters - get <...fields>
 -- setters - set <...fields>
 
-local anonymous_function = s("fn", fmt([[
+
+local start = s("<?", fmt([[
+<?php
+
+namespace {};
+
+]], {
+    i(1, "Namespace"),
+}))
+
+
+local method = s({
+    trig = "fn ([%w]+)",
+    regTrig = true,
+}, fmt([[
+{} function {}({}): {}
+{{
+    {}
+}}
+]], {
+    c(1, {
+        t("public"),
+        t("private"),
+        t("protected"),
+    }),
+    d(2, function(_, snip)
+        return sn(1, i(1, snip.captures[1]))
+    end),
+    i(3, ""),
+    c(4, {
+        i(1, ""),
+        t("void"),
+        t("array"),
+        t("int"),
+        t("bool"),
+        t("float"),
+        t("object"),
+    }),
+    i(5, "// TODO: implement"),
+    -- f(5, function(_, snip)
+    --     return "// TODO: implement method " .. snip.captures[1]
+    -- end),
+}))
+
+
+local empty_contructor = s("conse", fmt([[
+public function __construct({})
+{{
+    {}
+}}
+]], {
+    i(1, ""),
+    i(2, "// TODO"),
+}))
+
+
+local anonymous_func = s("fn", fmt([[
 function({}) {{
     {}
 }}
@@ -45,15 +106,22 @@ function({}) {{
     i(2, "// TODO"),
 }))
 
-local arrow_function = s("afn", fmt([[
+
+local arrow_func = s("afn", fmt([[
 fn({}) => {}
 ]], {
     i(1, ""),
     i(2, "/* TODO */"),
 }))
 
-table.insert(snippets, anonymous_function)
-table.insert(snippets, arrow_function)
+
+table.insert(snippets, start)
+
+table.insert(snippets, method)
+table.insert(snippets, empty_contructor)
+
+table.insert(snippets, anonymous_func)
+table.insert(snippets, arrow_func)
 
 -- End
 
