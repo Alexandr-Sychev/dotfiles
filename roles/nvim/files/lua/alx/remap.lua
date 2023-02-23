@@ -15,11 +15,44 @@ vim.keymap.set("n", "<leader>ff", telescopeBuiltin.git_files, {})
 -- recent files
 vim.keymap.set("n", "<leader>fr", telescopeBuiltin.oldfiles, {})
 -- grep
-vim.keymap.set("n", "<leader>g", telescopeBuiltin.live_grep, {})
--- grep by word under cursor
-vim.keymap.set("n", "<leader>gw", telescopeBuiltin.grep_string, {})
+vim.keymap.set("n", "<leader>fg", telescopeBuiltin.live_grep, {})
 -- open last closed file
 vim.keymap.set("n", "<leader><leader>", ':e#\n')
+
+
+-- todo: git bindings
+--
+-- gs git status
+-- gc git commit
+-- gl git log
+-- glb git log for current buffer
+-- gb git branch
+-- gp git pull
+-- gP git push
+
+
+-- git
+-- gs - git status
+vim.keymap.set("n", "<leader>gs", ':Telescope git_status <CR>')
+-- gc - git commit
+-- gl - git log
+vim.keymap.set("n", "<leader>gl", ':Telescope git_commits <CR>')
+-- glb - git log for current buffer
+vim.keymap.set("n", "<leader>glb", ':Telescope git_bcommits <CR>')
+-- gb - git branch
+vim.keymap.set("n", "<leader>gb", ':Telescope git_branches <CR>')
+-- gp - git pull
+-- gP - git push
+
+
+-- todo: telescope coc
+--
+-- for all project:
+--   - classes
+--
+-- for buffer:
+--   - methods
+--   - actions
 
 
 -- files tree
@@ -30,6 +63,8 @@ vim.keymap.set("n", "<leader>E", ':NvimTreeFindFile\n')
 
 
 -- splits
+-- creating splits
+vim.keymap.set("n", "<leader>v", ':vsp <CR>')
 -- splits navigation
 vim.keymap.set("n", "<C-h>", '<C-w>h')
 vim.keymap.set("n", "<C-j>", '<C-w>j')
@@ -62,6 +97,7 @@ vim.keymap.set("v", "<leader>/", ':CommentToggle\n')
 -- code
 -- code actions
 vim.keymap.set("n", "<leader>a", vim.lsp.buf.code_action, bufopts)
+-- vim.keymap.set("n", "<leader>a", ':Telescope coc code_actions <CR>')
 
 
 -- floaterm
@@ -71,5 +107,5 @@ vim.keymap.set("n", "<leader>G", ':FloatermNew --width=0.9 --height=0.95 --title
 
 -- telescope
 vim.keymap.set("n", "<leader>t", ':Telescope <CR>')
--- vim.keymap.set("n", "<leader>tc", ':Telescope colorscheme<CR>')
--- vim.keymap.set("n", "<leader>th", ':Telescope help_tags<CR>')
+vim.keymap.set("n", "<leader>tc", ':Telescope colorscheme<CR>')
+vim.keymap.set("n", "<leader>th", ':Telescope help_tags<CR>')
