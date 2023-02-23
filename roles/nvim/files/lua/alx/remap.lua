@@ -11,7 +11,7 @@ vim.keymap.set("n", "<leader>pS", ':PackerSync\n')
 
 -- files navigation and search
 -- all not ignored files
-vim.keymap.set("n", "<leader>ff", telescopeBuiltin.find_files, {})
+vim.keymap.set("n", "<leader>ff", telescopeBuiltin.git_files, {})
 -- recent files
 vim.keymap.set("n", "<leader>fr", telescopeBuiltin.oldfiles, {})
 -- grep
