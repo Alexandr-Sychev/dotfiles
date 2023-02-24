@@ -12,10 +12,10 @@ telescope.setup {
     },
 
     extensions = {
-        coc = {
-            theme = 'ivy',
-            prefer_locations = true, -- always use Telescope locations to preview definitions/declarations/implementations etc
-        }
+        -- coc = {
+        --     theme = 'ivy',
+        --     prefer_locations = true, -- always use Telescope locations to preview definitions/declarations/implementations etc
+        -- }
     },
 
     pickers = {
@@ -25,4 +25,4 @@ telescope.setup {
     },
 }
 
-telescope.load_extension('coc')
+-- telescope.load_extension('coc')
