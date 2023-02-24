@@ -85,5 +85,7 @@ return require('packer').startup(function(use)
     use 'rose-pine/neovim'
     use 'arcticicestudio/nord-vim'
     use 'dracula/vim'
+    use 'doums/darcula'
+    use 'sainnhe/everforest'
 
 end)

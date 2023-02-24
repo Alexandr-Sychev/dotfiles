@@ -12,7 +12,7 @@ lualine.setup {
         },
         ignore_focus = {},
         always_divide_middle = true,
-        globalstatus = false,
+        globalstatus = true,
         refresh = {
             statusline = 1000,
             tabline = 1000,
@@ -23,9 +23,9 @@ lualine.setup {
         lualine_a = { 'mode' },
         lualine_b = { 'branch', 'diff', 'diagnostics' },
         lualine_c = { 'filename' },
-        lualine_x = { 'encoding', 'fileformat', 'filetype' },
-        lualine_y = { 'progress' },
-        lualine_z = { 'location' }
+        lualine_x = {},
+        lualine_y = { 'encoding' },
+        lualine_z = { 'filetype' },
     },
     inactive_sections = {
         lualine_a = {},
@@ -39,5 +39,4 @@ lualine.setup {
     winbar = {},
     inactive_winbar = {},
     extensions = {}
-
 }
