@@ -68,9 +68,27 @@ local lf = s({
     i(3, "-- TODO: implement"),
 }))
 
+local mf = s({
+    trig = "mf ([%w_]+)",
+    regTrig = true,
+}, fmt([[
+    M.{} = function({})
+        {}
+    end
+
+
+]], {
+    d(1, function(_, snip)
+        return sn(1, i(1, snip.captures[1]))
+    end),
+    i(2, ""),
+    i(3, "-- TODO: implement"),
+}))
+
 table.insert(snippets, inlineFunc)
 table.insert(snippets, anonymousFunc)
 table.insert(snippets, lf)
+table.insert(snippets, mf)
 
 -- End
 
