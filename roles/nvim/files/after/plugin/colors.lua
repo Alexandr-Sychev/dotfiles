@@ -5,5 +5,5 @@ function SetColorTheme(color)
     -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 end
 
-SetColorTheme('rose-pine-main')
--- SetColorTheme('dracula')
+-- SetColorTheme('rose-pine-main')
+SetColorTheme('dracula')

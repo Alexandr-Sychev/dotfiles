@@ -105,4 +105,4 @@ vim.keymap.set("n", "<leader>a", vim.lsp.buf.code_action, bufopts)
 -- telescope
 vim.keymap.set("n", "<leader>t", ':Telescope <CR>')
 vim.keymap.set("n", "<leader>tc", ':Telescope colorscheme<CR>')
-vim.keymap.set("n", "<leader>th", ':Telescope help_tags<CR>')
+vim.keymap.set("n", "<leader>h", ':Telescope help_tags<CR>')
