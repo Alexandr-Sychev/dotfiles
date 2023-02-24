@@ -74,6 +74,12 @@ return require('packer').startup(function(use)
     -- Table mode
     use 'dhruvasagar/vim-table-mode'
 
+    -- Lualine
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    }
+
     -- Colorschemes
     use 'savq/melange-nvim'
     use 'rose-pine/neovim'
