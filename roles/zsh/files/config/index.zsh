@@ -26,10 +26,13 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-export DOTFILES=~/.dotfiles
 export PATH=$PATH:$DOTFILES/scripts
 
-# Aliases
+# Init modules
 
-source ./config/aliases.zsh
+modules_path=${0:a:h}/modules
 
+for module_name in $(ls $modules_path);
+do
+    source $modules_path/$module_name/index.zsh
+done

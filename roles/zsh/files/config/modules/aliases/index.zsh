@@ -1,4 +1,3 @@
-alias debug-awesome="tail -f ls /proc/$(pidof awesome)/fd/2"
 alias x="exit"
 alias c="clear"
 alias lg="lazygit"
