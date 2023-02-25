@@ -21,8 +21,12 @@ _M_tmux__go_to_session() {
 _M_tmux__create_project_session() {
     project_name=$1
 
-    tmux new-session -d -s $project_name
-    tmux send-keys -t $project_name.1 "cd $project_path && nvim ." ENTER
+    cd $project_path
+
+    # if project has tmuxinator config use that config 
+
+    # tmux new-session -d -s $project_name
+    # tmux send-keys -t $project_name.1 "cd $project_path && nvim ." ENTER
 }
 
 M_tmux__kill_session_with_fzf() {
@@ -42,13 +46,7 @@ M_tmux__open_session_with_fzf() {
         exit 0
     fi
 
-    # if outside of tmux
-    if [ -z $TMUX ]; then
-        tmux attach -t $SESSION
-    # else inside of tmux
-    else
-        tmux switch-client -t $SESSION
-    fi
+    _M_tmux__go_to_session $SESSION
 }
 
 M_tmux__create_session_from_projects_directory_with_fzf() {
