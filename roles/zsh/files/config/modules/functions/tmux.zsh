@@ -18,15 +18,31 @@ _M_tmux__go_to_session() {
     fi
 }
 
-_M_tmux__create_project_session() {
-    project_name=$1
+_M_tmux__get_tmuxinator_template() {
+    case $1 in 
+        blog)
+            echo laravel-sail
+            ;;
+        *)
+            echo simple
+            ;;
+    esac
+}
 
+_M_tmux__get_tmuxinator_template_path() {
+    echo "$DOTFILES/roles/tmux/files/templates/$(_M_tmux__get_tmuxinator_template $1).yml" 
+}
+
+_M_tmux__create_project_session() {
     cd $project_path
 
-    # if project has tmuxinator config use that config 
-
-    # tmux new-session -d -s $project_name
-    # tmux send-keys -t $project_name.1 "cd $project_path && nvim ." ENTER
+    if [ -e $project_path/.tmuxinator.yml ]
+    then
+        tmuxinator start -n $project_name
+    else
+        tmuxinator start -n $project_name \
+            -p $(_M_tmux__get_tmuxinator_template_path $project_name)
+    fi
 }
 
 M_tmux__kill_session_with_fzf() {
