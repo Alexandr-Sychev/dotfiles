@@ -45,7 +45,7 @@ _M_tmux__create_project_session() {
     fi
 }
 
-M_tmux__kill_session_with_fzf() {
+M_tmux__kill_session() {
     SESSION=$(_M_tmux__select_active_session_with_fzf)
 
     if [ -z $SESSION ]; then
@@ -55,7 +55,7 @@ M_tmux__kill_session_with_fzf() {
     tmux kill-session -t $SESSION
 }
 
-M_tmux__open_session_with_fzf() {
+M_tmux__open_session() {
     SESSION=$(_M_tmux__select_active_session_with_fzf)
 
     if [ -z $SESSION ]; then
@@ -65,9 +65,10 @@ M_tmux__open_session_with_fzf() {
     _M_tmux__go_to_session $SESSION
 }
 
-M_tmux__create_session_from_projects_directory_with_fzf() {
-    projects_directory=$1
-    project_name=$(ls --format=single-column $1 | fzf)
+M_tmux__create_session_from_directory() {
+    projects_directory=$M_TMUX__PROJECTS_DIR
+    echo $projects_directory
+    project_name=$(ls --format=single-column $projects_directory | fzf)
     project_path=$projects_directory/$project_name
 
     tmux has-session -t $project_name 2>/dev/null
