@@ -44,4 +44,5 @@
 
 windows:
   - nvim: nvim
-  - zsh: echo hello from laravel-sail
+  - zsh: 
+  - run: sup
