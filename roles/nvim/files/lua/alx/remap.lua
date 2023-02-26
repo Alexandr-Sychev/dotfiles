@@ -20,41 +20,17 @@ vim.keymap.set("n", "<leader>fg", telescopeBuiltin.live_grep, {})
 vim.keymap.set("n", "<leader><leader>", ':e#\n')
 
 
--- todo: git bindings
---
--- gs git status
--- gc git commit
--- gl git log
--- glb git log for current buffer
--- gb git branch
--- gp git pull
--- gP git push
-
-
 -- git
 -- g open lazygit
 vim.keymap.set("n", "<leader>G", ':FloatermNew --width=0.9 --height=0.95 --title=lazygit lazygit <CR>')
 -- gs - git status
 vim.keymap.set("n", "<leader>gs", ':Telescope git_status <CR>')
--- gc - git commit
 -- gl - git log
 vim.keymap.set("n", "<leader>gl", ':Telescope git_commits <CR>')
 -- glb - git log for current buffer
 vim.keymap.set("n", "<leader>glb", ':Telescope git_bcommits <CR>')
 -- gb - git branch
 vim.keymap.set("n", "<leader>gb", ':Telescope git_branches <CR>')
--- gp - git pull
--- gP - git push
-
-
--- todo: telescope coc
---
--- for all project:
---   - classes
---
--- for buffer:
---   - methods
---   - actions
 
 
 -- files tree
@@ -96,10 +72,14 @@ vim.keymap.set("n", "<leader>/", ':CommentToggle\n')
 vim.keymap.set("v", "<leader>/", ':CommentToggle\n')
 
 
--- code
+-- lsp
 -- code actions
 vim.keymap.set("n", "<leader>a", vim.lsp.buf.code_action, bufopts)
 -- vim.keymap.set("n", "<leader>a", ':Telescope coc code_actions <CR>')
+-- problems list
+vim.keymap.set("n", "<leader>d", ':Telescope diagnostics <CR>')
+-- next problem
+vim.keymap.set("n", "dn", vim.diagnostic.goto_next)
 
 
 -- telescope
