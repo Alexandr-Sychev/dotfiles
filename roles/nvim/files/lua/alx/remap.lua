@@ -75,11 +75,13 @@ vim.keymap.set("v", "<leader>/", ':CommentToggle\n')
 -- lsp
 -- code actions
 vim.keymap.set("n", "<leader>a", vim.lsp.buf.code_action, bufopts)
--- vim.keymap.set("n", "<leader>a", ':Telescope coc code_actions <CR>')
--- problems list
-vim.keymap.set("n", "<leader>d", ':Telescope diagnostics <CR>')
--- next problem
+-- problems in current buffer
+vim.keymap.set("n", "<leader>d", ':Telescope diagnostics bufnr=0 <CR>')
+-- problems in all buffers
+vim.keymap.set("n", "<leader>D", ':Telescope diagnostics <CR>')
+-- problems navigaion
 vim.keymap.set("n", "dn", vim.diagnostic.goto_next)
+vim.keymap.set("n", "dN", vim.diagnostic.goto_prev)
 
 
 -- telescope
