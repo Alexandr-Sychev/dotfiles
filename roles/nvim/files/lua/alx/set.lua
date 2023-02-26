@@ -16,3 +16,6 @@ vim.opt.signcolumn = 'no'
 
 -- format on save
 vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]]
+
+-- spellchecking languages
+vim.cmd [[set spelllang=en,ru]]

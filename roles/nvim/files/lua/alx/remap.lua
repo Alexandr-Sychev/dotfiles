@@ -106,3 +106,7 @@ vim.keymap.set("n", "<leader>a", vim.lsp.buf.code_action, bufopts)
 vim.keymap.set("n", "<leader>t", ':Telescope <CR>')
 vim.keymap.set("n", "<leader>tc", ':Telescope colorscheme<CR>')
 vim.keymap.set("n", "<leader>h", ':Telescope help_tags<CR>')
+
+
+-- spellchecking
+vim.keymap.set("n", "<f11>", ':set spell! <cr>', { silent = true })
