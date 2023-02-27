@@ -81,3 +81,14 @@ M_tmux__create_session_from_directory() {
     _M_tmux__go_to_session $project_name
 }
 
+M_tmux__create_session_from_tmuxinator_configuration() {
+    # project_name=$(tmuxinator list --newline | sed '/tmuxinator projects:/ d' | fzf)
+
+    # sort <(tmuxinator list -n | sed '/tmuxinator projects:/ d') \
+        # <(ls -1 ~/projects) | uniq
+
+    # tmuxinator start $project_name
+    
+    open-tmuxinator-project.py
+}
+

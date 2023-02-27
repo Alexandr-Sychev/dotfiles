@@ -1,0 +1,6 @@
+name: tmux-lualine
+root: ~/projects/tmux-lualine/
+
+windows:
+  - nvim: nvim
+  - zsh: echo tmux-lualine

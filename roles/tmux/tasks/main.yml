@@ -16,3 +16,10 @@
     dest: "{{ lookup('env', 'HOME') }}/.tmux.conf"
     state: link
     force: yes
+
+- name: Link tmuxinator projects
+  file:
+    src: "{{ lookup('env', 'DOTFILES') }}/roles/tmux/files/templates"
+    dest: "{{ lookup('env', 'HOME') }}/.tmux.conf"
+    state: link
+    force: yes
