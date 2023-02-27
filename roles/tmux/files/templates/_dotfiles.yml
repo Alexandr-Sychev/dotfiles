@@ -1,0 +1,10 @@
+name: _dotfiles
+root: ~/.dotfiles/
+
+windows:
+  - nvim: 
+      layout: main-vertical
+      panes:
+        - nvim
+        - zsh
+  - zsh: 

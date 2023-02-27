@@ -19,9 +19,13 @@ tmuxinator_projects = [p for p in tmuxinator_projects if p not in base_projects]
 pd_cmd = 'ls -1 ' + projects_path
 projects_directory = exec(pd_cmd).strip().split('\n')
 
-fzf_input = '\n'.join(set(tmuxinator_projects + projects_directory))
+variants = sorted(set(tmuxinator_projects + projects_directory))
+fzf_input = '\n'.join(variants)
 fzf_cmd = f'echo "{fzf_input}" | fzf'
 chosen = exec(fzf_cmd).strip()
+
+if not chosen:
+    exit(0)
 
 if chosen in tmuxinator_projects:
     cmd = 'tmuxinator start ' + chosen

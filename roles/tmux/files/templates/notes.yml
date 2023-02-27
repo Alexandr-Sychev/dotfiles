@@ -1,0 +1,5 @@
+name: notes
+root: ~/notes
+
+windows:
+  - nvim: nvim
