@@ -9,8 +9,8 @@ def exec(cmd):
 
 
 projects_path = os.getenv('HOME') + '/projects'
-base_projects = ['simple', 'laravel-sail']
-base_project = 'simple'
+base_projects = ['base']
+base_project = 'base'
 
 tp_cmd = 'tmuxinator list -n | sed "/tmuxinator projects:/ d"'
 tmuxinator_projects = exec(tp_cmd).strip().split('\n')
