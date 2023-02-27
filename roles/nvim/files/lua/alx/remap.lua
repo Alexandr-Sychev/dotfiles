@@ -17,7 +17,7 @@ vim.keymap.set("n", "<leader>fr", telescopeBuiltin.oldfiles, {})
 -- grep
 vim.keymap.set("n", "<leader>fg", telescopeBuiltin.live_grep, {})
 -- open last closed file
-vim.keymap.set("n", "<leader><leader>", ':e#\n')
+vim.keymap.set("n", "<leader><leader>", ':e#\n', { silent = true })
 
 
 -- git
@@ -35,14 +35,14 @@ vim.keymap.set("n", "<leader>gb", ':Telescope git_branches <CR>')
 
 -- files tree
 -- toggle files tree
-vim.keymap.set("n", "<leader>e", ':NvimTreeToggle\n')
+vim.keymap.set("n", "<leader>e", ':NvimTreeToggle\n', { silent = true })
 -- show current file in files tree
-vim.keymap.set("n", "<leader>E", ':NvimTreeFindFile\n')
+vim.keymap.set("n", "<leader>E", ':NvimTreeFindFile\n', { silent = true })
 
 
 -- splits
 -- creating splits
-vim.keymap.set("n", "<leader>v", ':vsp <CR>')
+vim.keymap.set("n", "<leader>v", ':vsp <CR>', { silent = true })
 -- splits navigation
 vim.keymap.set("n", "<C-h>", '<C-w>h')
 vim.keymap.set("n", "<C-j>", '<C-w>j')
@@ -68,8 +68,8 @@ vim.keymap.set("n", "G", "Gzz")
 -- rename
 vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, {})
 -- comment
-vim.keymap.set("n", "<leader>/", ':CommentToggle\n')
-vim.keymap.set("v", "<leader>/", ':CommentToggle\n')
+vim.keymap.set("n", "<leader>/", ':CommentToggle\n', { silent = true })
+vim.keymap.set("v", "<leader>/", ':CommentToggle\n', { silent = true })
 
 
 -- lsp

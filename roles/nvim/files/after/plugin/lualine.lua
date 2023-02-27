@@ -4,8 +4,8 @@ lualine.setup {
     options = {
         icons_enabled = true,
         theme = 'auto',
-        component_separators = { left = '', right = '' },
-        section_separators = { left = '', right = '' },
+        component_separators = '|',
+        section_separators = '',
         disabled_filetypes = {
             statusline = {},
             winbar = {},
@@ -23,7 +23,7 @@ lualine.setup {
         lualine_a = { 'mode' },
         lualine_b = { 'branch', 'diff' },
         lualine_c = { 'filename' },
-        lualine_x = { 'diagnostics' },
+        lualine_x = { 'diagnostics', 'progress' },
         lualine_y = { 'encoding' },
         lualine_z = { 'filetype' },
     },
