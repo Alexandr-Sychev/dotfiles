@@ -8,6 +8,6 @@
       - nitrogen
       - composer
       - entr
-      - obsidian
+      - lua
     state: present
 

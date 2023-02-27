@@ -24,7 +24,7 @@ local req = s({
     trig = "req ([%w_]+)",
     regTrig = true,
 }, fmt([[
-    local {} = require("{}")
+    local {} = require('{}')
 
 ]], {
     d(1, function(_, snip)
@@ -36,7 +36,7 @@ local req = s({
 }))
 
 
-local inlineFunc = s("if", fmt([[
+local inlineFunc = s("fni", fmt([[
     function({}) {} end
 ]], {
     i(1, ""),
@@ -44,7 +44,7 @@ local inlineFunc = s("if", fmt([[
 }))
 
 
-local anonymousFunc = s("f", fmt([[
+local anonymousFunc = s("fn", fmt([[
     function({})
         {}
     end
@@ -54,8 +54,8 @@ local anonymousFunc = s("f", fmt([[
 }))
 
 
-local lf = s({
-    trig = "lf ([%w_]+)",
+local localFunc = s({
+    trig = "fnl ([%w_]+)",
     regTrig = true,
 }, fmt([[
     local {} = function({})
@@ -72,8 +72,8 @@ local lf = s({
 }))
 
 
-local mf = s({
-    trig = "mf ([%w_]+)",
+local moduleFunc = s({
+    trig = "fnm ([%w_]+)",
     regTrig = true,
 }, fmt([[
     M.{} = function({})
@@ -93,8 +93,8 @@ local mf = s({
 table.insert(snippets, req)
 table.insert(snippets, inlineFunc)
 table.insert(snippets, anonymousFunc)
-table.insert(snippets, lf)
-table.insert(snippets, mf)
+table.insert(snippets, localFunc)
+table.insert(snippets, moduleFunc)
 
 -- End
 
