@@ -193,7 +193,17 @@ for i = 1, 9 do
 
         awful.key({}, "XF86AudioMute", function()
             awful.util.spawn("amixer -D pulse sset Master toggle", false)
-        end)
+        end),
+
+        awful.key({ modkey }, "f", function()
+            for s in screen do
+                s.mywibox.visible = not s.mywibox.visible
+                if s.mybottomwibox then
+                    s.mybottomwibox.visible = not s.mybottomwibox.visible
+                end
+            end
+        end,
+            { description = "toggle wibox (topbar)", group = "awesome" })
 
     )
 
