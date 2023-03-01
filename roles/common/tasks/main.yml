@@ -9,5 +9,10 @@
       - composer
       - entr
       - lua
+      - pip
     state: present
 
+- name: Install howdoi
+  become: yes
+  shell:
+    pip install howdoi

@@ -48,10 +48,16 @@ local tags = {
     {
         name = "6: Terminal",
     },
-    {
-        name = "1:Other",
-        secondary = true,
-    },
+    -- {
+    --     name = "1:Other",
+    --     secondary = true,
+    -- },
 }
 
-add_tags(tags)
+-- add_tags(tags)
+
+awful.tag(
+    { "1", "2", "3", "4", "5", "6", "7", "8", "9" },
+    1,
+    awful.layout.layouts[1]
+)

@@ -2,5 +2,9 @@ name: tmux-lualine
 root: ~/projects/tmux-lualine/
 
 windows:
-  - nvim: nvim
-  - zsh: 
+  - nvim: 
+      layout: main-vertical
+      panes:
+        - nvim
+        - 
+  - git: lazygit

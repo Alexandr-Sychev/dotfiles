@@ -1,0 +1,14 @@
+name: tmuxinator-manager
+root: ~/projects/tmuxinator-manager/
+
+windows:
+  - nvim: 
+      layout: main-vertical
+      panes:
+        - nvim
+        - 
+  - man: 
+      layout: main-vertical
+      panes:
+        - man tmux
+        - 

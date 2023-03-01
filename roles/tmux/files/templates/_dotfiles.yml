@@ -6,5 +6,5 @@ windows:
       layout: main-vertical
       panes:
         - nvim
-        - zsh
+        - 
   - zsh: 
