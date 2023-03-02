@@ -1,23 +1,16 @@
-local awful = require("awful")
+local awful = require('awful')
+local utils = require('modules.key_bindings.utils')
+
+local k = utils.create_keybinding_builder('layout')
+
+local resize_width_value = 0.07
+
+local change_width = function(width)
+    return function() awful.tag.incmwfact(width) end
+end
 
 return {
-
-    awful.key({ modkey, }, "space", function() awful.layout.inc(1) end,
-        { description = "select next", group = "layout" }),
-
-    -- awful.key({ modkey, "Shift" }, "space", function() awful.layout.inc(-1) end,
-    --     { description = "select previous", group = "layout" }),
-    -- awful.key({ modkey, }, "l", function() awful.tag.incmwfact(0.05) end,
-    --     { description = "increase master width factor", group = "layout" }),
-    -- awful.key({ modkey, }, "h", function() awful.tag.incmwfact(-0.05) end,
-    --     { description = "decrease master width factor", group = "layout" }),
-    -- awful.key({ modkey, "Shift" }, "h", function() awful.tag.incnmaster(1, nil, true) end,
-    --     { description = "increase the number of master clients", group = "layout" }),
-    -- awful.key({ modkey, "Shift" }, "l", function() awful.tag.incnmaster(-1, nil, true) end,
-    --     { description = "decrease the number of master clients", group = "layout" }),
-    -- awful.key({ modkey, "Control" }, "h", function() awful.tag.incncol(1, nil, true) end,
-    --     { description = "increase the number of columns", group = "layout" }),
-    -- awful.key({ modkey, "Control" }, "l", function() awful.tag.incncol(-1, nil, true) end,
-    --     { description = "decrease the number of columns", group = "layout" }),
-
+    k('m', 'space', 'select next', function() awful.layout.inc(1) end),
+    k('m', 'l', 'increase master width factor', change_width(resize_width_value)),
+    k('m', 'h', 'decrease master width factor', change_width( -resize_width_value)),
 }

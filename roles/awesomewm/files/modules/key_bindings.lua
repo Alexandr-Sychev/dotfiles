@@ -134,6 +134,7 @@ groups = {
     require('modules.key_bindings.groups.launcher'),
     require('modules.key_bindings.groups.layout'),
     require('modules.key_bindings.groups.screen'),
+    require('modules.key_bindings.groups.client'),
 }
 
 globalkeys = gears.table.merge(globalkeys, create_key_bindings(groups))

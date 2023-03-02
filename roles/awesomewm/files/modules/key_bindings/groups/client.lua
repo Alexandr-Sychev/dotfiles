@@ -1,46 +1,31 @@
-local awful = require("awful")
+local awful = require('awful')
+local utils = require('modules.key_bindings.utils')
+
+local k = utils.create_keybinding_builder('client')
+
+local focus_by_index = function(index)
+    return function()
+        awful.client.focus.byidx(index)
+    end
+end
+
+local swap_by_index = function(index)
+    return function()
+        awful.client.swap.byidx(index)
+    end
+end
+
+local go_back = function()
+    awful.client.focus.history.previous()
+    if client.focus then
+        client.focus:raise()
+    end
+end
 
 return {
-    awful.key({ modkey, }, "j",
-        function()
-            awful.client.focus.byidx(1)
-        end,
-        { description = "focus next by index", group = "client" }
-    ),
-
-    awful.key({ modkey, }, "k",
-        function()
-            awful.client.focus.byidx( -1)
-        end,
-        { description = "focus previous by index", group = "client" }
-    ),
-
-    awful.key({ modkey, "Shift" }, "j", function() awful.client.swap.byidx(1) end,
-        { description = "swap with next client by index", group = "client" }),
-    awful.key({ modkey, "Shift" }, "k", function() awful.client.swap.byidx( -1) end,
-        { description = "swap with previous client by index", group = "client" }),
-
-    -- awful.key({ modkey, }, "u", awful.client.urgent.jumpto,
-    --     { description = "jump to urgent client", group = "client" }),
-
-    awful.key({ modkey, }, "Tab",
-        function()
-            awful.client.focus.history.previous()
-            if client.focus then
-                client.focus:raise()
-            end
-        end,
-        { description = "go back", group = "client" }),
-
-    awful.key({ modkey, "Control" }, "n",
-        function()
-            local c = awful.client.restore()
-            -- Focus restored client
-            if c then
-                c:emit_signal(
-                    "request::activate", "key.unminimize", { raise = true }
-                )
-            end
-        end,
-        { description = "restore minimized", group = "client" })
+    k('m', 'j', 'focus next by index', focus_by_index(1)),
+    k('m', 'k', 'focus previous by index', focus_by_index( -1)),
+    k('ms', 'j', 'swap with next client by index', swap_by_index(1)),
+    k('ms', 'k', 'swap with previous client by index', swap_by_index( -1)),
+    k('m', 'b', 'go back', go_back),
 }
