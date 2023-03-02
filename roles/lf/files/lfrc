@@ -89,7 +89,7 @@ map t
 
 map <c-v> open_with_vim
 map cm chmod
-map sw set_wallpapers
+map w set_wallpapers
 map o mkfile
 map O mkdir
 map D delete
