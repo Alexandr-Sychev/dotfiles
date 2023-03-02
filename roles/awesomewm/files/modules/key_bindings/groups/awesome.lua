@@ -26,4 +26,5 @@ return {
     k('m', 'w', 'show main menu', function() mymainmenu:show() end),
     k('ms', 'h', 'show help', hotkeys_popup.show_help),
     k('m', 'v', 'hide wibox', hide_wibox),
+    k('mc', 'q', 'quit awesome', awesome.quit),
 }

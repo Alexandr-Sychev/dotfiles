@@ -9,3 +9,4 @@ alias v="nvim"
 # alias to="open-tmuxinator-project.py"
 
 alias tn="tmux new-session -t"
+alias ta="tmux attach -t"
