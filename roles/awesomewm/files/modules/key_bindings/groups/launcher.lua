@@ -1,14 +1,18 @@
-local awful = require("awful")
+local utils = require('modules.key_bindings.utils')
+
+local k = utils.create_keybinding_builder('launcher')
+local s = utils.spawn
+local ss = utils.spawn_with_shell
+
+local rofi_command = 'rofi -show drun &>> /tmp/rofi.log'
 
 return {
+    k('m', 'Return', 'open a terminal', s(terminal)),
+    k('m', 'd', 'open the rofi', ss(rofi_command)),
+    k('ms', 'w', 'open a browser', ss('chromium')),
+
     -- awful.key({ modkey }, "p", function() menubar.show() end,
     --     { description = "show the menubar", group = "launcher" })
     -- awful.key({ modkey }, "r", function() awful.screen.focused().mypromptbox:run() end,
-    --     { description = "run prompt", group = "launcher" }),
-    awful.key({ modkey, }, "Return", function() awful.spawn(terminal) end,
-        { description = "open a terminal", group = "launcher" }),
-    awful.key({ modkey, }, "d", function() awful.spawn.with_shell("rofi -show drun &>> /tmp/rofi.log") end,
-        { description = "open rofi", group = "launcher" }),
-    awful.key({ modkey, "Shift" }, "w", function() awful.spawn.with_shell("chromium") end,
-        { description = "open browser", group = "launcher" }),
+    --     { description = "run prompt", group = "launcher" })
 }
