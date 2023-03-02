@@ -1,5 +1,7 @@
 local awful = require("awful")
 
+local M = {}
+
 local parse_mods = function(mods)
     local result = {}
 
@@ -17,7 +19,7 @@ local parse_mods = function(mods)
     return result
 end
 
-local create_keybinding_builder = function(group)
+M.create_keybinding_builder = function(group)
     return function(mods, key, description, action)
         return awful.key(parse_mods(mods), key, action, {
             description = description,
@@ -26,4 +28,16 @@ local create_keybinding_builder = function(group)
     end
 end
 
-return create_keybinding_builder
+M.spawn = function(command)
+    return function()
+        awful.spawn(command)
+    end
+end
+
+M.spawn_with_shell = function(command)
+    return function()
+        awful.spawn.with_shell(command)
+    end
+end
+
+return M
