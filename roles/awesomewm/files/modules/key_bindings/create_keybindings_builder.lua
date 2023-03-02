@@ -18,7 +18,7 @@ local parse_mods = function(mods)
 end
 
 local create_keybinding_builder = function(group)
-    return function(mods, key, action, description)
+    return function(mods, key, description, action)
         return awful.key(parse_mods(mods), key, action, {
             description = description,
             group = group

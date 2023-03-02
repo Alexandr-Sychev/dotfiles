@@ -33,12 +33,7 @@ globalkeys = gears.table.join(
         { description = "open rofi", group = "launcher" }),
     awful.key({ modkey, "Shift" }, "w", function() awful.spawn.with_shell("chromium") end,
         { description = "open browser", group = "launcher" }),
-    awful.key({ modkey, }, "b", function() awful.spawn.with_shell("/bin/rofi-bluetooth/rofi-bluetooth") end,
-        { description = "open bluetooth manager", group = "awesome" }),
 
-    awful.key({ modkey, }, "p",
-        function() awful.spawn.with_shell("~/.dotfiles/scripts/de/open-power-management-menu.py") end,
-        { description = "open power manager", group = "awesome" }),
 
     awful.key({ modkey, }, "j",
         function()
@@ -52,8 +47,6 @@ globalkeys = gears.table.join(
         end,
         { description = "focus previous by index", group = "client" }
     ),
-    awful.key({ modkey, }, "w", function() mymainmenu:show() end,
-        { description = "show main menu", group = "awesome" }),
 
     -- Layout manipulation
     awful.key({ modkey, "Shift" }, "j", function() awful.client.swap.byidx(1) end,
@@ -76,8 +69,6 @@ globalkeys = gears.table.join(
     -- Standard program
     awful.key({ modkey, }, "Return", function() awful.spawn(terminal) end,
         { description = "open a terminal", group = "launcher" }),
-    awful.key({ modkey, "Shift" }, "r", awesome.restart,
-        { description = "reload awesome", group = "awesome" }),
     -- awful.key({ modkey, "Shift" }, "q", awesome.quit,
     --     { description = "quit awesome", group = "awesome" }),
 
@@ -96,8 +87,6 @@ globalkeys = gears.table.join(
 
     awful.key({ modkey, }, "space", function() awful.layout.inc(1) end,
         { description = "select next", group = "layout" }),
-    awful.key({ modkey, }, "l", function() awful.spawn.with_shell("~/.dotfiles/scripts/screen-locker/lockscreen") end,
-        { description = "lock screen", group = "awesome" }),
 
     -- awful.key({ modkey, "Shift" }, "space", function() awful.layout.inc(-1) end,
     --     { description = "select previous", group = "layout" }),
