@@ -28,6 +28,10 @@ export NVM_DIR="$HOME/.nvm"
 
 export PATH=$PATH:$DOTFILES/scripts
 
+export PATH=$PATH:/usr/lib/ruby/gems/3.0.0
+export PATH=$PATH:$HOME/.local/share/gem/ruby/3.0.0
+export PATH=$PATH:"$(dirname $(gem which tmuxinator))"
+
 # Init modules
 
 modules_path=${0:a:h}/modules

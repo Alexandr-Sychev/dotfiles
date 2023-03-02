@@ -56,8 +56,10 @@ local tags = {
 
 -- add_tags(tags)
 
-awful.tag(
-    { "1", "2", "3", "4", "5", "6", "7", "8", "9" },
-    1,
-    awful.layout.layouts[1]
-)
+for s = 1, 2, 1 do
+    awful.tag(
+        { "1", "2", "3", "4", "5", "6", "7", "8", "9" },
+        s,
+        awful.layout.layouts[1]
+    )
+end

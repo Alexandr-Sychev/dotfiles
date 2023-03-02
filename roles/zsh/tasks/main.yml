@@ -49,3 +49,7 @@
   shell:
     source "{{ lookup('env', 'HOME') }}/.zshrc"
 
+- name: Make zsh default shell
+  become: true
+  shell:
+    chsh -s $(which zsh) alx

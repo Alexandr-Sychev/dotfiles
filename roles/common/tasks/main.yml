@@ -4,15 +4,14 @@
     name:
       - curl
       - fzf
-      - zoxide
-      - nitrogen
+      - bat
       - composer
       - entr
       - lua
-      - pip
+      - ripgrep
+      - neofetch
+      - ruby
+      - xwallpaper
+      - pass
     state: present
 
-- name: Install howdoi
-  become: yes
-  shell:
-    pip install howdoi

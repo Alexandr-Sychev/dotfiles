@@ -1,0 +1,21 @@
+#!/bin/sh
+
+while getopts "p:d:" options
+do
+    case "${options}" in
+        p)
+            prompt=$OPTARG
+            ;;
+        d)
+            delimeter=$OPTARG
+            ;;
+    esac
+done
+
+[ ! -z "$delimeter" ] && delimeter="="
+
+input=$(cat)
+
+selected=$(echo "$input" | sed "/^$/ d; s/\s*$delimeter.*//g" | dmenu -p "$prompt")
+echo $(echo "$input" | grep $selected | sed "s/.*$delimeter\s*//g")
+

@@ -1,0 +1,4 @@
+#!/usr/bin/bash
+
+cp $1 ~/.config/wall.png && xwallpaper --zoom ~/.config/wall.png
+

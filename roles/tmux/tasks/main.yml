@@ -17,9 +17,18 @@
     state: link
     force: yes
 
+- name: Install tmuxinator
+  gem:
+    name: tmuxinator
+    state: present
+
 - name: Link tmuxinator projects
   file:
     src: "{{ lookup('env', 'DOTFILES') }}/roles/tmux/files/templates"
     dest: "{{ lookup('env', 'HOME') }}/.tmuxinator"
     state: link
     force: yes
+
+- name: Apply tmux config
+  shell:
+    tmux source ~/.tmux.conf

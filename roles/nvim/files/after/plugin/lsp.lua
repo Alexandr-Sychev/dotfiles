@@ -6,7 +6,7 @@ lsp.ensure_installed {
     -- markdown and other markup languages
     -- 'ltex',
     -- javascript, typescript
-    'tsserver',
+    -- 'tsserver',
     -- lua
     'lua_ls',
     -- php

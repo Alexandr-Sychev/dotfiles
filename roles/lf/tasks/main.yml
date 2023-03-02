@@ -1,6 +1,15 @@
-- name: Install lf
+- name: Install
   become: yes
   package:
-    name: lf
+    name:
+      - lf
+      - ueberzug
     state: present
+
+- name: Link config
+  file:
+    src: "{{ lookup('env', 'DOTFILES') }}/roles/lf/files"
+    dest: "{{ lookup('env', 'HOME') }}/.config/lf"
+    state: link
+    force: yes
 
