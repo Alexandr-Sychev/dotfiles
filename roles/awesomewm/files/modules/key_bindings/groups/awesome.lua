@@ -3,8 +3,6 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 
 local k = create_keybinding_builder('awesome')
 
--- return {
---     k('ms', 'h', hotkeys_popup.show_help, 'show help'),
--- }
-
-return k('ms', 'h', hotkeys_popup.show_help, 'show help')
+return {
+    k('ms', 'h', hotkeys_popup.show_help, 'show help'),
+}

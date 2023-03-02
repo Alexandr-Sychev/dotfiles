@@ -12,6 +12,10 @@ root.buttons(gears.table.join(
 
 -- {{{ Key bindings
 globalkeys = gears.table.join(
+-- awful.key({ modkey, 'Shift' }, "h", hotkeys_popup.show_help,
+--     { description = "show help", group = "awesome" }),
+
+
     awful.key({ modkey, }, "u",
         function() awful.screen.focus(1) end,
         { description = "open secondary screen", group = "screen" }),
@@ -19,16 +23,12 @@ globalkeys = gears.table.join(
     awful.key({ modkey, }, "i",
         function() awful.screen.focus(2) end,
         { description = "open main screen", group = "screen" }),
-
-    awful.key({ modkey, 'Shift' }, "h", hotkeys_popup.show_help,
-        { description = "show help", group = "awesome" }),
     awful.key({ modkey, }, "Left", awful.tag.viewprev,
         { description = "view previous", group = "tag" }),
     awful.key({ modkey, }, "Right", awful.tag.viewnext,
         { description = "view next", group = "tag" }),
     awful.key({ modkey, }, "Escape", awful.tag.history.restore,
         { description = "go back", group = "tag" }),
-
     awful.key({ modkey, }, "d", function() awful.spawn.with_shell("rofi -show drun &>> /tmp/rofi.log") end,
         { description = "open rofi", group = "launcher" }),
     awful.key({ modkey, "Shift" }, "w", function() awful.spawn.with_shell("chromium") end,
@@ -48,7 +48,7 @@ globalkeys = gears.table.join(
     ),
     awful.key({ modkey, }, "k",
         function()
-            awful.client.focus.byidx(-1)
+            awful.client.focus.byidx( -1)
         end,
         { description = "focus previous by index", group = "client" }
     ),
@@ -58,7 +58,7 @@ globalkeys = gears.table.join(
     -- Layout manipulation
     awful.key({ modkey, "Shift" }, "j", function() awful.client.swap.byidx(1) end,
         { description = "swap with next client by index", group = "client" }),
-    awful.key({ modkey, "Shift" }, "k", function() awful.client.swap.byidx(-1) end,
+    awful.key({ modkey, "Shift" }, "k", function() awful.client.swap.byidx( -1) end,
         { description = "swap with previous client by index", group = "client" }),
     awful.key({ modkey, }, "o", function() awful.screen.focus_relative(1) end,
         { description = "focus the next screen", group = "screen" }),
@@ -96,7 +96,6 @@ globalkeys = gears.table.join(
 
     awful.key({ modkey, }, "space", function() awful.layout.inc(1) end,
         { description = "select next", group = "layout" }),
-
     awful.key({ modkey, }, "l", function() awful.spawn.with_shell("~/.dotfiles/scripts/screen-locker/lockscreen") end,
         { description = "lock screen", group = "awesome" }),
 
@@ -182,7 +181,6 @@ for i = 1, 9 do
                 end
             end,
             { description = "toggle focused client on tag #" .. i, group = "tag" }),
-
         awful.key({}, "XF86AudioRaiseVolume", function()
             awful.util.spawn("amixer -D pulse sset Master 5%+", false)
         end),
@@ -193,21 +191,41 @@ for i = 1, 9 do
 
         awful.key({}, "XF86AudioMute", function()
             awful.util.spawn("amixer -D pulse sset Master toggle", false)
-        end),
+        end)
 
-        awful.key({ modkey }, "f", function()
-            for s in screen do
-                s.mywibox.visible = not s.mywibox.visible
-                if s.mybottomwibox then
-                    s.mybottomwibox.visible = not s.mybottomwibox.visible
-                end
-            end
-        end,
-            { description = "toggle wibox (topbar)", group = "awesome" })
+    -- awful.key({ modkey }, "f", function()
+    --     for s in screen do
+    --         s.mywibox.visible = not s.mywibox.visible
+    --         if s.mybottomwibox then
+    --             s.mybottomwibox.visible = not s.mybottomwibox.visible
+    --         end
+    --     end
+    -- end,
+    --     { description = "toggle wibox (topbar)", group = "awesome" })
 
     )
-
 end
+
+local create_key_bindings = function(groups)
+    local result = {}
+
+    for i, group in ipairs(groups) do
+        for j, key_binding in ipairs(group) do
+            table.insert(result, key_binding[1])
+            table.insert(result, key_binding[2])
+            table.insert(result, key_binding[3])
+            table.insert(result, key_binding[4])
+        end
+    end
+
+    return result
+end
+
+groups = {
+    require('modules.key_bindings.groups.awesome'),
+}
+
+globalkeys = gears.table.merge(globalkeys, create_key_bindings(groups))
 
 -- Set keys
 root.keys(globalkeys)
