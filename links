@@ -1,3 +1,7 @@
+$DOTFILES/config/xinitrc ~/.xinitrc
+$DOTFILES/config/xprofile ~/.xprofile
+$DOTFILES/config/profile ~/.profile
+
 $DOTFILES/config/lf ~/.config/lf
 $DOTFILES/config/kitty ~/.config/kitty
 

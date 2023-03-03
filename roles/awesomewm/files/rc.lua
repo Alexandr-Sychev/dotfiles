@@ -41,21 +41,24 @@ require("modules.layouts")
 -- {{{ Menu
 -- Create a launcher widget and a main menu
 myawesomemenu = {
-    { "restart", awesome.restart },
-    { "hotkeys", function() hotkeys_popup.show_help(nil, awful.screen.focused()) end },
-    { "manual", terminal .. " -e man awesome" },
+    { "restart",     awesome.restart },
+    { "hotkeys",     function() hotkeys_popup.show_help(nil, awful.screen.focused()) end },
+    { "manual",      terminal .. " -e man awesome" },
     { "edit config", editor_cmd .. " " .. awesome.conffile },
     -- { "edit config", editor_cmd .. " " .. (os.getenv("DOTFILES") or "~/.dotfiles/") },
-    { "quit", function() awesome.quit() end },
+    { "quit",        function() awesome.quit() end },
 }
 
-mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
-    { "open terminal", terminal }
-}
+mymainmenu = awful.menu({
+    items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
+        { "open terminal", terminal }
+    }
 })
 
-mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
-    menu = mymainmenu })
+mylauncher = awful.widget.launcher({
+    image = beautiful.awesome_icon,
+    menu = mymainmenu
+})
 
 -- Menubar configuration
 menubar.utils.terminal = terminal -- Set the terminal for applications that require it
@@ -105,19 +108,19 @@ local tasklist_buttons = gears.table.join(
         awful.client.focus.byidx(1)
     end),
     awful.button({}, 5, function()
-        awful.client.focus.byidx(-1)
+        awful.client.focus.byidx( -1)
     end))
 
 local function set_wallpaper(s)
     -- Wallpaper
-    if beautiful.wallpaper then
-        local wallpaper = beautiful.wallpaper
-        -- If wallpaper is a function, call it with the screen
-        if type(wallpaper) == "function" then
-            wallpaper = wallpaper(s)
-        end
-        gears.wallpaper.maximized(wallpaper, s, true)
-    end
+    -- if beautiful.wallpaper then
+    --     local wallpaper = beautiful.wallpaper
+    --     -- If wallpaper is a function, call it with the screen
+    --     if type(wallpaper) == "function" then
+    --         wallpaper = wallpaper(s)
+    --     end
+    --     gears.wallpaper.maximized(wallpaper, s, true)
+    -- end
 end
 
 -- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
@@ -134,9 +137,9 @@ awful.screen.connect_for_each_screen(function(s)
     s.mylayoutbox = awful.widget.layoutbox(s)
     s.mylayoutbox:buttons(gears.table.join(
         awful.button({}, 1, function() awful.layout.inc(1) end),
-        awful.button({}, 3, function() awful.layout.inc(-1) end),
+        awful.button({}, 3, function() awful.layout.inc( -1) end),
         awful.button({}, 4, function() awful.layout.inc(1) end),
-        awful.button({}, 5, function() awful.layout.inc(-1) end)))
+        awful.button({}, 5, function() awful.layout.inc( -1) end)))
     -- Create a taglist widget
     s.mytaglist = awful.widget.taglist {
         screen  = s,
