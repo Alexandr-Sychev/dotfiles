@@ -13,5 +13,7 @@
       - ruby
       - xwallpaper
       - pass
+      - kitty
+      - lf
     state: present
 
