@@ -4,12 +4,7 @@ file=~/dox/notes/tasks/watch-later.md
 
 clipboard=$(xclip -o)
 comment=$(echo "" | rofi -dmenu -p "Comment")
+[ -n "$comment" ] && comment="$comment - "
 
-if [ -n comment ]; then
-    result="- $comment - $clipboard"
-else
-    result="- $clipboard"
-fi
-
-echo $result >> $file
+echo "- $comment$clipboard" >> $file
 
