@@ -3,7 +3,7 @@
 file=~/dox/notes/tasks/watch-later.md
 
 clipboard=$(xclip -o)
-comment=$(echo "" | rofi -dmenu -p "Comment")
+comment=$(echo "" | dmenu -p "Comment")
 [ -n "$comment" ] && comment="$comment - "
 
 echo "- $comment$clipboard" >> $file

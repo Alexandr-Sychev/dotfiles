@@ -27,5 +27,5 @@ return {
     k('m', 'k', 'focus previous by index', focus_by_index( -1)),
     k('ms', 'j', 'swap with next client by index', swap_by_index(1)),
     k('ms', 'k', 'swap with previous client by index', swap_by_index( -1)),
-    k('m', 'b', 'go back', go_back),
+    -- k('m', 'b', 'go back', go_back),
 }
