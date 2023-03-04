@@ -10,7 +10,7 @@ local change_width = function(width)
 end
 
 return {
-    k('m', 'space', 'select next', function() awful.layout.inc(1) end),
+    k('ms', 'space', 'select next', function() awful.layout.inc(1) end),
     k('m', 'l', 'increase master width factor', change_width(resize_width_value)),
     k('m', 'h', 'decrease master width factor', change_width( -resize_width_value)),
 }
