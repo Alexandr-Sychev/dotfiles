@@ -8,5 +8,7 @@ alias v="nvim"
 # alias tn="M_tmux__create_session_from_directory"
 # alias to="open-tmuxinator-project.py"
 
+alias md="mkdir -p"
+
 alias tn="tmux new-session -t"
 alias ta="tmux attach -t"

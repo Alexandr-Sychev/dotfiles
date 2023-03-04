@@ -9,7 +9,7 @@ local rofi_command = 'rofi -show drun &>> /tmp/rofi.log'
 return {
     k('m', 'Return', 'open a terminal', s(terminal)),
     k('m', 'd', 'open the rofi', ss(rofi_command)),
-    k('ms', 'w', 'open a browser', ss('chromium')),
+    k('m', 'w', 'open a browser', ss('chromium')),
 
     -- awful.key({ modkey }, "p", function() menubar.show() end,
     --     { description = "show the menubar", group = "launcher" })

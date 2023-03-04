@@ -23,7 +23,7 @@ return {
     k('m', 'p', 'open power manager', ss(power_manager)),
     k('ms', 'b', 'open bluetooth manager', ss(bluetooth_manager)),
     k('ms', 'r', 'reload awesome', awesome.restart),
-    k('m', 'w', 'show main menu', function() mymainmenu:show() end),
+    -- k('m', 'w', 'show main menu', function() mymainmenu:show() end),
     k('ms', 'h', 'show help', hotkeys_popup.show_help),
     k('m', 'v', 'hide wibox', hide_wibox),
     k('mc', 'q', 'quit awesome', awesome.quit),
