@@ -1,0 +1,5 @@
+#!/bin/sh
+
+wp_dir="$HOME/pix/wpapers"
+
+sxiv -t -o $wp_dir | xargs set-wallpapers

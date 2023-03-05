@@ -20,11 +20,13 @@ btrfs-progs
 bzip2
 chromium
 clipit
+cmatrix
 composer
 coreutils
 cpupower
 cronie
 cryptsetup
+dash
 device-mapper
 dfc
 dhclient
@@ -153,6 +155,7 @@ polkit-gnome
 powertop
 procps-ng
 psmisc
+python-pywal
 qt5ct
 ranger
 reiserfsprogs
@@ -170,6 +173,7 @@ spectre-meltdown-checker
 speedtest-cli
 squashfs-tools
 sudo
+sxiv
 sysfsutils
 syslog-ng
 systemd

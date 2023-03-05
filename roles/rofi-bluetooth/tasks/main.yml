@@ -1,11 +1,3 @@
-- name: Install rofi and bluez utils
-  become: yes
-  package:
-    name: 
-      - rofi
-      - bluez-utils
-    state: present
-
 - name: Install rofi-bluetooth
   become: yes
   git:
