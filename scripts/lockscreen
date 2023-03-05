@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 # pictures_dir="$(xdg-user-dir PICTURES 2> /dev/null)"
 # slice="${pictures_dir:-$HOME/Pictures}/slice.png"
@@ -80,7 +80,7 @@
 #     --clock
 
 i3lock \
-    --clock \
+    # --clock \
     --color=000000 \
     --time-color=FFFFFF \
     --time-str='%H:%M' \
