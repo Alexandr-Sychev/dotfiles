@@ -6,5 +6,4 @@ function SetColorTheme(color)
     -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 end
 
-print('hello from colors')
 SetColorTheme('wal')
