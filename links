@@ -4,6 +4,7 @@ $DOTFILES/config/profile ~/.profile
 
 $DOTFILES/config/zsh/.zshenv ~/.zshenv
 $DOTFILES/config/zsh ~/.config/zsh
+$DOTFILES/config/tmux ~/.config/tmux
 $DOTFILES/config/lf ~/.config/lf
 $DOTFILES/config/kitty ~/.config/kitty
 $DOTFILES/config/picom ~/.config/picom

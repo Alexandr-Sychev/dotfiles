@@ -4,4 +4,5 @@
 
 export EDITOR=nvim
 export BROWSER=chromium
+export TMUX_PLUGIN_MANAGER_PATH=$HOME/.config/tmux/plugins/
 

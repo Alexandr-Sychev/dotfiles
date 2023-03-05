@@ -1,34 +1,34 @@
-- name: Install tmux
-  become: yes
-  package:
-    name: tmux
-    state: present
+# - name: Install tmux
+#   become: yes
+#   package:
+#     name: tmux
+#     state: present
 
 - name: Install tmux-plugin-manager
   git:
     repo: https://github.com/tmux-plugins/tpm.git
-    dest: "{{ lookup('env', 'HOME') }}/.tmux/plugins/tpm"
+    dest: "{{ lookup('env', 'HOME') }}/.config/tmux/plugins/tpm"
     depth: 1
 
-- name: Link .tmux.conf
-  file:
-    src: "{{ lookup('env', 'DOTFILES') }}/roles/tmux/files/tmux.conf"
-    dest: "{{ lookup('env', 'HOME') }}/.tmux.conf"
-    state: link
-    force: yes
+# - name: Link .tmux.conf
+#   file:
+#     src: "{{ lookup('env', 'DOTFILES') }}/roles/tmux/files/tmux.conf"
+#     dest: "{{ lookup('env', 'HOME') }}/.tmux.conf"
+#     state: link
+#     force: yes
 
 - name: Install tmuxinator
   gem:
     name: tmuxinator
     state: present
 
-- name: Link tmuxinator projects
-  file:
-    src: "{{ lookup('env', 'DOTFILES') }}/roles/tmux/files/templates"
-    dest: "{{ lookup('env', 'HOME') }}/.tmuxinator"
-    state: link
-    force: yes
-
-- name: Apply tmux config
-  shell:
-    tmux source ~/.tmux.conf
+# - name: Link tmuxinator projects
+#   file:
+#     src: "{{ lookup('env', 'DOTFILES') }}/roles/tmux/files/templates"
+#     dest: "{{ lookup('env', 'HOME') }}/.tmuxinator"
+#     state: link
+#     force: yes
+#
+# - name: Apply tmux config
+#   shell:
+#     tmux source ~/.tmux.conf
