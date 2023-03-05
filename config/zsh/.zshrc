@@ -49,5 +49,5 @@ export PATH=$PATH:"$(dirname $(gem which tmuxinator))"
 # end pywal secion
 
 # Aliases
-
 source $DOTFILES/config/zsh/aliases
+source $DOTFILES/config/zsh/aliases-generated
