@@ -4,13 +4,6 @@
     name: zsh
     state: present
 
-- name: Link config
-  file:
-    src: "{{ lookup('env', 'DOTFILES') }}/roles/zsh/files/zshrc"
-    dest: "{{ lookup('env', 'HOME') }}/.zshrc"
-    state: link
-    force: yes
-
 - name: Check oh-my-zsh installed
   stat:
     path: "{{ lookup('env', 'HOME') }}/.oh-my-zsh"
@@ -44,12 +37,7 @@
 
 # end plugins
 
-
-- name: Apply .zshrc
-  shell:
-    source "{{ lookup('env', 'HOME') }}/.zshrc"
-
-- name: Make zsh default shell
-  become: true
-  shell:
-    chsh -s $(which zsh) alx
+# - name: Make zsh default shell
+#   become: true
+#   shell:
+#     chsh -s $(which zsh) alx

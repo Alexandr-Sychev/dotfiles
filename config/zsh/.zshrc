@@ -1,3 +1,5 @@
+export DOTFILES=~/.dotfiles
+
 export ZSH="$HOME/.oh-my-zsh"
 
 # ZSH_THEME="robbyrussell"
@@ -46,11 +48,6 @@ export PATH=$PATH:"$(dirname $(gem which tmuxinator))"
 
 # end pywal secion
 
-# Init modules
+# Aliases
 
-modules_path=${0:a:h}/modules
-
-for module_name in $(ls $modules_path);
-do
-    source $modules_path/$module_name/index.zsh
-done
+source $DOTFILES/config/zsh/aliases

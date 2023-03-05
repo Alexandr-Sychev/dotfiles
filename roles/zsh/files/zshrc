@@ -1,3 +1,0 @@
-export DOTFILES=~/.dotfiles
-
-source $DOTFILES/roles/zsh/files/config/index.zsh
