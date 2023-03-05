@@ -1,5 +1,3 @@
-print('hello from lsp')
-
 lsp.preset("recommended")
 
 lsp.ensure_installed {

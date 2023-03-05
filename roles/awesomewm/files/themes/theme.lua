@@ -21,8 +21,8 @@ theme.fg_focus                                  = "#ffffff"
 theme.fg_urgent                                 = "#ffffff"
 theme.fg_minimize                               = "#ffffff"
 
-theme.gap_single_client                         = false
-theme.useless_gap                               = dpi(8)
+theme.gap_single_client                         = true
+theme.useless_gap                               = dpi(12)
 theme.border_width                              = dpi(0)
 theme.border_normal                             = "#000000"
 theme.border_focus                              = "#535d6c"
@@ -62,6 +62,9 @@ theme.taglist_squares_unsel                     = theme_assets.taglist_squares_u
 theme.menu_submenu_icon                         = themes_path .. "default/submenu.png"
 theme.menu_height                               = dpi(35)
 theme.menu_width                                = dpi(140)
+
+-- Master width factor
+theme.master_width_factor = 0.6 
 
 -- You can add as many variables as
 -- you wish and access them by using
