@@ -1,3 +1,4 @@
+print('hello from lsp')
 local lsp = require("lsp-zero")
 
 lsp.preset("recommended")

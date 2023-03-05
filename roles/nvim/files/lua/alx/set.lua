@@ -14,6 +14,8 @@ vim.opt.hlsearch = false
 
 vim.opt.signcolumn = 'no'
 
+vim.opt.termguicolors = false
+
 -- format on save
 vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]]
 

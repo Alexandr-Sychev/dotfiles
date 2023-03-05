@@ -1,9 +1,10 @@
 function SetColorTheme(color)
     vim.cmd.colorscheme(color)
 
+    vim.cmd.set('notermguicolors')
     -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
     -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 end
 
--- SetColorTheme('rose-pine-main')
-SetColorTheme('dracula')
+print('hello from colors')
+SetColorTheme('wal')

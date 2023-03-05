@@ -89,4 +89,6 @@ return require('packer').startup(function(use)
     use 'doums/darcula'
     use 'sainnhe/everforest'
 
+    -- pywal
+    use 'dylanaraps/wal.vim'
 end)

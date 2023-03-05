@@ -30,6 +30,22 @@ export PATH=$PATH:/usr/lib/ruby/gems/3.0.0
 export PATH=$PATH:$HOME/.local/share/gem/ruby/3.0.0
 export PATH=$PATH:"$(dirname $(gem which tmuxinator))"
 
+# pywal section
+
+# Import colorscheme from 'wal' asynchronously
+# &   # Run the process in the background.
+# ( ) # Hide shell job control messages.
+# Not supported in the "fish" shell.
+(cat ~/.cache/wal/sequences &)
+
+# Alternative (blocks terminal for 0-3ms)
+# cat ~/.cache/wal/sequences
+
+# To add support for TTYs this line can be optionally added.
+# source ~/.cache/wal/colors-tty.sh
+
+# end pywal secion
+
 # Init modules
 
 modules_path=${0:a:h}/modules

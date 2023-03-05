@@ -1,4 +1,11 @@
 #!/usr/bin/bash
 
-cp $1 ~/.config/wall.png && xwallpaper --zoom ~/.config/wall.png
+wp_path="$HOME/.config/wallpaper"
+
+cp -f $1 $wp_path
+# delete cache
+wal -c
+# -n tells `wal` to skip setting the wallpaper.
+wal -n -i $wp_path
+xwallpaper --zoom $wp_path
 
