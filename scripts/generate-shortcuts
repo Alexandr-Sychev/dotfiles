@@ -1,6 +1,10 @@
 #!/bin/sh
 
 zsh_aliases_path="$HOME/.config/zsh/aliases-generated"
+lf_go_mappings_path="$HOME/.config/lf/go-mappings"
 
 sed '/^#.*/d; /^$/d' $DOTFILES/folders | \
     awk '{ printf "alias d%s=\"cd %s\"\n", $1, $2 }' > $zsh_aliases_path
+
+sed '/^#.*/d; /^$/d' $DOTFILES/folders | \
+    awk '{ printf "map g%s cd %s\n", $1, $2 }' > $lf_go_mappings_path

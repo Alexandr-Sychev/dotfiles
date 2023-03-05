@@ -106,11 +106,13 @@ map i push A<a-b><a-b><a-f> # before extension
 map tn open_in_new_session
 
 # Places
-map gh cd ~
-map g. cd ~/.dotfiles/
-map gd cd ~/dl/
-map gD cd ~/dox/
-map gp cd ~/proj/
-map gr cd ~/repos/
-map g/ cd /
+# map gh cd ~
+# map g. cd ~/.dotfiles/
+# map gd cd ~/dl/
+# map gD cd ~/dox/
+# map gp cd ~/proj/
+# map gr cd ~/repos/
+# map g/ cd /
+
+source "~/.config/lf/go-mappings"
 
