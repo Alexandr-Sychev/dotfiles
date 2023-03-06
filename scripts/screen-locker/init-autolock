@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-
-xautolock -time 10 -locker ./lockscreen &
-
