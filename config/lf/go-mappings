@@ -1,5 +1,0 @@
-map gh cd ~
-map g.. cd $DOTFILES
-map g.l cd ~/repos/dotfiles/luke-smith
-map gww cd ~/pix/wpapers
-map gnn cd ~/dox/notes
