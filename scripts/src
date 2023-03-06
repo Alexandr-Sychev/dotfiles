@@ -1,0 +1,6 @@
+#!/usr/bin/zsh
+
+case "$1" in
+    zsh)
+        source $HOME/.config/zsh/.zshrc ;;
+esac

@@ -1,5 +1,7 @@
 h   ~
 ..  $DOTFILES
+.s  $DOTFILES/scripts
+.c  $DOTFILES/config
 .l  ~/repos/dotfiles/luke-smith
 ww  ~/pix/wpapers
 nn  ~/dox/notes

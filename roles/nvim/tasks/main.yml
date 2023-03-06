@@ -1,14 +1,14 @@
-- name: Install nvim
-  become: yes
-  package:
-    name: neovim
-    state: present
-
-- name: Install lazygit
-  become: yes
-  package:
-    name: lazygit
-    state: present
+# - name: Install nvim
+#   become: yes
+#   package:
+#     name: neovim
+#     state: present
+#
+# - name: Install lazygit
+#   become: yes
+#   package:
+#     name: lazygit
+#     state: present
 
 - name: Install packer
   git:

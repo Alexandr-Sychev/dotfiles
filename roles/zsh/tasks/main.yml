@@ -1,8 +1,8 @@
-- name: Install zsh
-  become: yes
-  package:
-    name: zsh
-    state: present
+# - name: Install zsh
+#   become: yes
+#   package:
+#     name: zsh
+#     state: present
 
 - name: Check oh-my-zsh installed
   stat:

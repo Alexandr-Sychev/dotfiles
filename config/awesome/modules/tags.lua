@@ -56,12 +56,12 @@ local tags = {
 
 -- add_tags(tags)
 
-tags = { 'othr', 'othr', 'tgrm', 'othr', 'brow', 'term' }
+-- tags = { 'othr', 'othr', 'tgrm', 'othr', 'brow', 'term' }
 
 for s = 1, 2, 1 do
     awful.tag(
-        tags,
-        -- { "1", "2", "3", "4", "5", "6", "7", "8", "9" },
+        -- tags,
+        { "1", "2", "3", "4", "5", "6", "7", "8", "9" },
         s,
         awful.layout.layouts[1]
     )
