@@ -244,9 +244,11 @@ client.connect_signal("mouse::enter", function(c)
 end)
 
 require("modules.autostart")
+
+-- awful.spawn.with_shell("source /home/alx/.profile && sxhkd &")
+
 require("modules.key_bindings")
-require("modules.after_startup")
 
-
+awful.spawn.with_shell("/home/alx/.dotfiles/config/after-startup-wm")
 
 -- }}}

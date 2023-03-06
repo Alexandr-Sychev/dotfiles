@@ -1,4 +1,4 @@
-#!/bin/sh
+#/usr/bin/zsh
 
 xautolock -time 10 -locker lockscreen &
-
+sxhkd &
