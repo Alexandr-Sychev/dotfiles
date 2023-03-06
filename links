@@ -9,4 +9,5 @@ $DOTFILES/config/lf ~/.config/lf
 $DOTFILES/config/kitty ~/.config/kitty
 $DOTFILES/config/picom ~/.config/picom
 $DOTFILES/config/awesome ~/.config/awesome
+$DOTFILES/config/sxhkd ~/.config/sxhkd
 

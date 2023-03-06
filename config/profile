@@ -3,6 +3,7 @@
 # fix "xdg-open fork-bomb" export your preferred browser from here
 
 export EDITOR=nvim
+export TERMINAL=kitty
 export BROWSER=chromium
 export TMUX_PLUGIN_MANAGER_PATH=$HOME/.config/tmux/plugins/
 

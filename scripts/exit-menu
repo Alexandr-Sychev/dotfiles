@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# todo lock screen after sleep
+variants="
+lock \"lockscreen\"
+sleep \"systemctl suspend\"
+reboot \"reboot\"
+poweroff \"poweroff\"
+"
+
+selected=$(echo "$variants" | sed '/^$/ d' | awk '{ print $1 }' | dmenu -p "exit" | grep '\S')
+[ ! -z $selected ] && $(echo "$variants" | sed '/^$/ d' | grep "$selected" | cut -d '"' -f2)

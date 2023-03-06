@@ -3,4 +3,6 @@
 case "$1" in
     zsh)
         source $HOME/.config/zsh/.zshrc ;;
+    sxhkd)
+        killall sxhkd && sxhkd &
 esac

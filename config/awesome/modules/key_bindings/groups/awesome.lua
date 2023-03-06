@@ -19,9 +19,6 @@ local hide_wibox = function()
 end
 
 return {
-    k('m', 'l', 'lockscreen', ss(lock_screen)),
-    k('m', 'p', 'open power manager', ss(power_manager)),
-    k('ms', 'b', 'open bluetooth manager', ss(bluetooth_manager)),
     k('ms', 'r', 'reload awesome', awesome.restart),
     -- k('m', 'w', 'show main menu', function() mymainmenu:show() end),
     k('ms', 'h', 'show help', hotkeys_popup.show_help),

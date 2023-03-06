@@ -1,0 +1,14 @@
+super + Return
+    $TERMINAL
+super + w
+    $BROWSER
+super + d
+    rofi -show drun &>> /tmp/rofi.log
+super + r
+    run-script
+# todo super + shift + r edit-script
+super + F12
+    exit-menu
+# todo bluetooth manager
+# todo add to bookmarks
+# todo add to watch-later

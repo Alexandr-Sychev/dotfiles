@@ -92,11 +92,9 @@ end
 
 groups = {
     require('modules.key_bindings.groups.awesome'),
-    require('modules.key_bindings.groups.launcher'),
     require('modules.key_bindings.groups.layout'),
     require('modules.key_bindings.groups.screen'),
     require('modules.key_bindings.groups.client'),
-    require('modules.key_bindings.groups.other'),
 }
 
 globalkeys = gears.table.merge(globalkeys, create_key_bindings(groups))
