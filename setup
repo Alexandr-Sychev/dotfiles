@@ -7,7 +7,7 @@ PLAYBOOK="$DOTFILES/main.yml"
 export DOTFILES
 
 if ! [ -x "$(command -v ansible)" ]; then
-  sudo pacman -S ansible --noconfirm
+    sudo pacman -S ansible --noconfirm
 fi
 
 TAGS=$(printf ", %s" "$@")

@@ -46,6 +46,19 @@ export PATH=$PATH:"$(dirname $(gem which tmuxinator))"
 
 # end pywal secion
 
+lfcd () {
+    tmp="$(mktemp -uq)"
+    trap 'rm -f $tmp >/dev/null 2>&1 && trap - HUP INT QUIT TERM PWR EXIT' HUP INT QUIT TERM PWR EXIT
+    lf -last-dir-path="$tmp" "$@"
+    if [ -f "$tmp" ]; then
+        dir="$(cat "$tmp")"
+        [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
+    fi
+}
+
+bindkey -s '^o' '^ulfcd\n'
+alias lf="lfcd"
+
 # Aliases
 source $DOTFILES/config/zsh/aliases
 source $DOTFILES/config/zsh/aliases-generated
