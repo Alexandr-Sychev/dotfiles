@@ -8,5 +8,5 @@ reboot \"reboot\"
 poweroff \"poweroff\"
 "
 
-selected=$(echo "$variants" | sed '/^$/ d' | awk '{ print $1 }' | dmenu -p "exit" | grep '\S')
+selected=$(echo "$variants" | sed '/^$/ d' | awk '{ print $1 }' | dmenu -l 10 -p "exit" | grep '\S')
 [ ! -z $selected ] && $(echo "$variants" | sed '/^$/ d' | grep "$selected" | cut -d '"' -f2)

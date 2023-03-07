@@ -1,0 +1,71 @@
+#!/bin/sh
+
+# config
+
+save_path="$HOME/pix/shots"
+save_date_format="%Y-%m-%d-%H:%M:%S"
+
+# init
+
+help="Makes screenshot
+-c copy to clipboard
+-s [path] save
+-u upload
+-a annotate
+-h show help"
+
+copy=0
+save=0
+upload=0
+annotate=0
+
+# functions 
+
+show_help() {
+    echo "$help"
+}
+
+copy_to_clipboard() {
+    cat tmpfile | xclip -selection clipboard -t image/png
+    notify-send "Screenshot" "Screenshot copied to clipboard"
+}
+
+save() {
+    local path="$save_path/$(date +$save_date_format)"
+    cp tmpfile $path
+    notify-send "Screenshot" "Saved to $path"
+}
+
+upload() {
+    # todo
+    notify-send "Screenshot" "Upload is not implemented"
+}
+
+annotate() {
+    # todo
+    notify-send "Screenshot" "Annotate is not implemented"
+}
+
+# main
+
+while getopts ":hcsua" option; do
+    case $option in
+        h) show_help && exit 0 ;;
+        c) copy=1 ;;
+        s) save=1 ;;
+        u) upload=1 ;;
+        a) annotate=1 ;;
+    esac
+done
+
+tmpfile=$(mktemp)
+
+maim -s > tmpfile
+
+[ $copy -gt 0 ] && copy_to_clipboard
+[ $save -gt 0 ] && save
+[ $upload -gt 0 ] && upload
+[ $annotate -gt 0 ] && annotate
+
+rm tmpfile
+

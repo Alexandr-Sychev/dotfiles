@@ -1,3 +1,3 @@
 #!/bin/sh
 
-$(ls -1 $DOTFILES/scripts | rofi -dmenu)
+$(ls -1 $DOTFILES/scripts | dmenu -l 20 -p "run script")

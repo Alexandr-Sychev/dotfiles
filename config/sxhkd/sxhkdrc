@@ -3,7 +3,7 @@ super + Return
 super + w
     $BROWSER
 super + d
-    rofi -show drun &>> /tmp/rofi.log
+    dmenu_run -l 20
 super + r
     run-script
 # todo super + shift + r edit-script
@@ -12,3 +12,5 @@ super + F12
 # todo bluetooth manager
 # todo add to bookmarks
 # todo add to watch-later
+Print
+    screenshot -cs
