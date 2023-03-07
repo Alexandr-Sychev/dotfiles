@@ -118,7 +118,7 @@ cmd open_in_new_session ${{
 }}
 
 cmd set_wallpapers ${{
-    setbg $f
+    set-wallpapers $f
 }}
 
 map t
