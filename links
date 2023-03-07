@@ -12,4 +12,7 @@ $DOTFILES/config/awesome ~/.config/awesome
 $DOTFILES/config/sxhkd ~/.config/sxhkd
 ~/dox/notes/newsboat/urls $DOTFILES/config/newsboat/urls
 $DOTFILES/config/newsboat ~/.config/newsboat
+$DOTFILES/config/mpd ~/.config/mpd
+$DOTFILES/config/ncmpcpp ~/.config/ncmpcpp
+/mnt/hdd/data/music ~/msc/data
 

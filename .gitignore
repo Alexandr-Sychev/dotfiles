@@ -3,4 +3,5 @@
 /config/zsh/aliases-generated
 /config/lf/go-mappings
 /config/tmux/plugins/**
+/config/ncmpcpp/error.log
 
