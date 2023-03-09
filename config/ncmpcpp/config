@@ -18,7 +18,6 @@ playlist_display_mode = columns
 browser_display_mode = columns
 progressbar_look = ->
 media_library_primary_tag = album_artist
-media_library_albums_split_by_date = no
 startup_screen = "media_library"
 display_volume_level = no
 ignore_leading_the = yes
@@ -32,3 +31,7 @@ statusbar_color = red
 statusbar_time_color = cyan:b
 
 execute_on_song_change = notify-send "Now Playing" "$(mpc --format '%title% \n%artist% - %album%' current)"
+
+media_library_albums_split_by_date = no
+# media_library_show_album_date = yes
+# media_library_sort_by_date = yes

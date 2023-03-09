@@ -14,5 +14,6 @@ $DOTFILES/config/sxhkd ~/.config/sxhkd
 $DOTFILES/config/newsboat ~/.config/newsboat
 $DOTFILES/config/mpd ~/.config/mpd
 $DOTFILES/config/ncmpcpp ~/.config/ncmpcpp
-/mnt/hdd/data/music ~/msc/data
+/media/storage/msc ~/msc/data
+/media/storage/vid ~/vid
 
