@@ -6,7 +6,10 @@ super + d
     dmenu_run -l 20
 super + r
     run-script
-# todo super + shift + r edit-script
+super + shift + r
+    edit-script
+super + t
+    translate
 super + F12
     exit-menu
 # todo bluetooth manager

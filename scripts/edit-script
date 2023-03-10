@@ -1,4 +1,4 @@
 #!/bin/sh
 
-script_name=$(ls -1 $DOTFILES/scripts | dmenu -l 20 -p "run script")
+script_name=$(ls -1 $DOTFILES/scripts | dmenu -l 20 -p "edit script")
 $TERMINAL -e nvim "$DOTFILES/scripts/$script_name"

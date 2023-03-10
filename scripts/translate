@@ -1,0 +1,9 @@
+#/bin/sh
+
+available_actions="1. do nothing
+2. add to anki (not implemented)
+3. change and add to anki (not implemented)"
+
+word=$(echo "" | dmenu -p "translate")
+translated=$(trans -b :ru "$word")
+action=$(echo "$available_actions" | dmenu -p "$translated" -l 10)
