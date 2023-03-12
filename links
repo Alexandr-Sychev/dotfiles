@@ -16,4 +16,5 @@ $DOTFILES/config/mpd ~/.config/mpd
 $DOTFILES/config/ncmpcpp ~/.config/ncmpcpp
 /media/storage/msc ~/msc/data
 /media/storage/vid ~/vid
+$DOTFILES/config/tmuxp ~/.config/tmuxp
 

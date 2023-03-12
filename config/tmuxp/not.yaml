@@ -1,0 +1,7 @@
+session_name: not
+start_directory: ~/dox/notes/
+windows:
+  - window_name: nvim
+    layout: tiled
+    panes:
+      - nvim
