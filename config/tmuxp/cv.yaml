@@ -1,0 +1,7 @@
+session_name: cv
+start_directory: ~/proj/cv/
+windows:
+  - window_name: nvim
+    layout: tiled
+    panes:
+      - nvim
