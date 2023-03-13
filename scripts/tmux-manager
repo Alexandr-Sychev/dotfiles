@@ -2,21 +2,34 @@
 
 kill_session_keybinding="alt-k"
 
-load() {
-    tmuxp load -y "$(tmuxp ls | fzf)"
+projects() {
+    tmuxp ls | fzf | xargs tmuxp load -y
 }
 
-list() {
-    tmux ls -F "#{session_name}" | fzf \
-        --bind "$kill_session_keybinding:execute(tmux kill-session -t {})+reload(tmux ls -F \"#{session_name}\")" \
-        | xargs tmux switch-client -t
+switch_client() {
+    if [ -z $TMUX ]; then
+        tmux attach -t $1
+    else
+        tmux switch-client -t $1
+    fi
+}
+
+sessions() {
+    switch_client $(tmux ls -F "#{session_name}" | fzf \
+        --bind "$kill_session_keybinding:execute(tmux kill-session -t {})+reload(tmux ls -F \"#{session_name}\")")
+}
+
+new() {
+    tmux new-session -t "$(basename "`pwd`")"
 }
 
 case "$1" in
-    load)
-        load ;;
-    list)
-        list ;;
+    projects)
+        projects ;;
+    sessions)
+        sessions ;;
+    new)
+        new ;;
     *)
         tmux attach
 esac

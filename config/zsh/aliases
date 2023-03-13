@@ -5,3 +5,8 @@ alias md="mkdir -p"
 
 alias lg="lazygit"
 alias v="nvim"
+
+alias tm="tmux-manager"
+alias tms="tmux-manager sessions"
+alias tmp="tmux-manager projects"
+alias tmn="tmux-manager new"
