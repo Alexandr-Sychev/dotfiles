@@ -5,7 +5,3 @@ alias md="mkdir -p"
 
 alias lg="lazygit"
 alias v="nvim"
-
-alias tn="tmux new-session -t"
-alias ta="tmux attach -t"
-alias tl="tmuxp load -y"

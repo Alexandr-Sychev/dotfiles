@@ -1,0 +1,22 @@
+#!/bin/sh
+
+kill_session_keybinding="alt-k"
+
+load() {
+    tmuxp load -y "$(tmuxp ls | fzf)"
+}
+
+list() {
+    tmux ls -F "#{session_name}" | fzf \
+        --bind "$kill_session_keybinding:execute(tmux kill-session -t {})+reload(tmux ls -F \"#{session_name}\")" \
+        | xargs tmux switch-client -t
+}
+
+case "$1" in
+    load)
+        load ;;
+    list)
+        list ;;
+    *)
+        tmux attach
+esac
