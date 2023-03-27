@@ -1,0 +1,8 @@
+#!/bin/sh
+
+src=~/dox/notes
+dest="/media/storage/backup/notes-$(date +'%Y-%m-%d').bak"
+
+rm -rf $dest
+cp -R $src $dest
+

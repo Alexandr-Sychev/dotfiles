@@ -1,0 +1,7 @@
+session_name: term
+start_directory: ~/
+windows:
+  - window_name: term
+    layout: tiled
+    panes:
+      -

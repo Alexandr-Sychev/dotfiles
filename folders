@@ -1,8 +1,21 @@
 h   ~
+
 ..  $DOTFILES
 .s  $DOTFILES/scripts
 .c  $DOTFILES/config
 .l  ~/repos/dotfiles/luke-smith
+
 ww  ~/pix/wpapers
+
 nn  ~/dox/notes
+
 cc  ~/.config
+
+ss  /media/storage
+
+bb  ~/dox/bux
+bi  ~/dox/bux/it
+
+vm  ~/vid/mv
+vs  ~/vid/serials
+
