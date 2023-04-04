@@ -1,0 +1,13 @@
+#!/bin/sh
+
+choose() {
+    dmenu -p "$1"
+}
+
+mountable="$(lsblk -lp | grep "part $" | awk '{ print $1, "(" $4 ")" }')"
+[ "$mountable" = "" ] && exit 1
+# chosen=$(echo $mountable | dmenu -p "Choose drive" | awk '{ print $1 }')
+chosen=$(echo $mountable | choose "Choose drive" | awk '{ print $1 }')
+[ "$chosen" = "" ] && exit 1
+echo $chosen
+
