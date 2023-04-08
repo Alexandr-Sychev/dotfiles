@@ -1,0 +1,4 @@
+#!/bin/sh
+
+du -a ~/.dotfiles/scripts ~/.dotfiles/config | awk '{print $2}' | fzf | xargs nano
+find "$DOTFILES/config" -type f -not -path "$DOTFILES/config/tmux/plugins/*" | fzf
