@@ -1,7 +1,0 @@
-- name: Install rofi-bluetooth
-  become: yes
-  git:
-    repo: https://github.com/nickclyde/rofi-bluetooth.git
-    dest: /bin/rofi-bluetooth
-    depth: 1
-

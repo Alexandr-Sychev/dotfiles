@@ -18,4 +18,4 @@ $DOTFILES/config/ncmpcpp ~/.config/ncmpcpp
 /media/storage/vid ~/vid
 $DOTFILES/config/tmuxp ~/.config/tmuxp
 $DOTFILES/config/zathura/ ~/.config/zathura
-
+$DOTFILES/config/nvim-2.0/ ~/.config/nvim
