@@ -3,6 +3,13 @@ alias c="clear"
 
 alias md="mkdir -p"
 
+alias t="tree"
+alias t2="tree -L 2"
+alias t3="tree -L 3"
+alias tl="tree | less"
+alias tl2="tree -L 2 | less"
+alias tl3="tree -L 3 | less"
+
 alias lg="lazygit"
 alias v="nvim"
 
@@ -10,3 +17,4 @@ alias tm="tmux-manager"
 alias tms="tmux-manager sessions"
 alias tmp="tmux-manager projects"
 alias tmn="tmux-manager new"
+

@@ -19,3 +19,4 @@ $DOTFILES/config/ncmpcpp ~/.config/ncmpcpp
 $DOTFILES/config/tmuxp ~/.config/tmuxp
 $DOTFILES/config/zathura/ ~/.config/zathura
 $DOTFILES/config/nvim-2.0/ ~/.config/nvim
+$DOTFILES/config/bash/bashrc ~/.bashrc
