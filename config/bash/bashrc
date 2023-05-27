@@ -141,5 +141,5 @@ set -o vi
 source ~/.dotfiles/config/zsh/aliases
 source ~/.dotfiles/config/zsh/aliases-generated
 
-export PATH="$PATH:~/go/bin"
+export PATH="$PATH:~/go/bin:~/.dotfiles/scripts"
 
