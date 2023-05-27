@@ -7,9 +7,9 @@ return require('packer').startup(function(use)
     -- Files tree
     use {
         'nvim-tree/nvim-tree.lua',
---         config = function()
---             require("nvim-tree").setup {}
---         end
+        -- config = function()
+        --     require("nvim-tree").setup {}
+        -- end
     }
 
     -- Tmux integration
