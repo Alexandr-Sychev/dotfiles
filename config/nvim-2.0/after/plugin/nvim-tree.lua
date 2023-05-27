@@ -90,8 +90,8 @@ local function on_attach(bufnr)
 end
 
 -- disable netrw at the very start of your init.lua (strongly advised)
-vim.g.loaded_netrw = 0
-vim.g.loaded_netrwPlugin = 0
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
 vim.g.nvim_tree_show_icons = {
     folders = 0,

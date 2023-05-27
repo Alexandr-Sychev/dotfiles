@@ -11,12 +11,13 @@ return require('packer').startup(function(use)
         --     require("nvim-tree").setup {}
         -- end
     }
+    -- use "nvim-tree/nvim-web-devicons"
 
     -- Tmux integration
-    use({
+    use {
         "aserowy/tmux.nvim",
         config = function() require("tmux").setup() end
-    })
+    } 
 
     -- Telescope
     use {
