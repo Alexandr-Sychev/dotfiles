@@ -10,6 +10,8 @@ alias tl="tree | less"
 alias tl2="tree -L 2 | less"
 alias tl3="tree -L 3 | less"
 
+jless() { cat $1 | jq -C | less -r; }
+
 alias lg="lazygit"
 alias v="nvim"
 

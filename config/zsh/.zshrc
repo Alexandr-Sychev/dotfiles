@@ -59,6 +59,9 @@ lfcd () {
 bindkey -s '^o' '^ulfcd\n'
 alias lf="lfcd"
 
+# Disable beep sound
+unsetopt beep
+
 # Aliases
 source $DOTFILES/config/zsh/aliases
 source $DOTFILES/config/zsh/aliases-generated

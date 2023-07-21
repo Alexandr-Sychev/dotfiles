@@ -1,13 +1,13 @@
 # pywal
 # -R restores the last colorscheme that was in use.
-wal -R
+# wal -R
 
 # set wallpapers
-xwallpaper --screen 1 --tile ~/.config/wallpaper
+# xwallpaper --screen 1 --tile ~/.config/wallpaper
 
 # start compositor
-picom &
+# picom &
 
-sxhkd &
+# sxhkd &
 
 setxkbmap "us,ru" -option grp:alt_shift_toggle
