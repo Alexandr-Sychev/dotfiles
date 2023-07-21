@@ -1,3 +1,4 @@
+alias a="alias | fzf | awk -F= '{ print \$1 }'"
 alias x="exit"
 alias c="clear"
 

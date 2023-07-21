@@ -65,3 +65,4 @@ unsetopt beep
 # Aliases
 source $DOTFILES/config/zsh/aliases
 source $DOTFILES/config/zsh/aliases-generated
+
