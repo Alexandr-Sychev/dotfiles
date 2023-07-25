@@ -26,10 +26,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-export PATH=$PATH:/usr/lib/ruby/gems/3.0.0
-export PATH=$PATH:$HOME/.local/share/gem/ruby/3.0.0
-export PATH=$PATH:"$(dirname $(gem which tmuxinator))"
-
 # pywal section
 
 # Import colorscheme from 'wal' asynchronously
@@ -65,4 +61,8 @@ unsetopt beep
 # Aliases
 source $DOTFILES/config/zsh/aliases
 source $DOTFILES/config/zsh/aliases-generated
+
+# For tmuxp
+
+export DISABLE_AUTO_TITLE='true'
 
