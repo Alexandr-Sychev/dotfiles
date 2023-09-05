@@ -1,6 +1,10 @@
 session_name: term
 start_directory: ~/
 windows:
+  - window_name: files
+    layout: tiled
+    panes:
+      - lf
   - window_name: term
     layout: tiled
     panes:

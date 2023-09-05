@@ -2,7 +2,7 @@ export DOTFILES=$HOME/.dotfiles
 
 export ZSH="$HOME/.oh-my-zsh"
 
-# ZSH_THEME="robbyrussell"
+#ZSH_THEME="robbyrussell"
 ZSH_THEME="bira"
 
 plugins=(
@@ -11,6 +11,9 @@ plugins=(
   zsh-syntax-highlighting
   vi-mode
   laravel-sail
+  docker
+  docker-compose
+  kubectl
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -25,6 +28,8 @@ export FZF_PREVIEW_WINDOW='right:65%:nohidden'
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export PATH=$PATH:/usr/bin/go/bin
 
 # pywal section
 
@@ -53,7 +58,7 @@ lfcd () {
 }
 
 bindkey -s '^o' '^ulfcd\n'
-alias lf="lfcd"
+# alias lf="lfcd"
 
 # Disable beep sound
 unsetopt beep
