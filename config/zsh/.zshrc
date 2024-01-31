@@ -29,7 +29,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-export PATH=$PATH:/usr/bin/go/bin
+export PATH=$PATH:~/go/bin:/usr/local/go/bin
 
 # pywal section
 
@@ -71,3 +71,4 @@ source $DOTFILES/config/zsh/aliases-generated
 
 export DISABLE_AUTO_TITLE='true'
 
+export GOPATH=~/go

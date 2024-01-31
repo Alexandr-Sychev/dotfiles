@@ -11,3 +11,6 @@ export BROWSER=chromium
 
 export TMUX_PLUGIN_MANAGER_PATH=$HOME/.config/tmux/plugins/
 
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
